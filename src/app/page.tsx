@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Link from 'next/link';
 
-// Simple typewriter effect
+// --- Typewriter effect component ---
+// This component animates text as if it's being typed out, with an optional blinking cursor.
 interface TypewriterProps {
   text: string;
   speed?: number;
@@ -15,6 +16,7 @@ const Typewriter = ({ text, speed = 100, cursor = true }: TypewriterProps) => {
   const [showCursor, setShowCursor] = useState(true);
   const [isComplete, setIsComplete] = useState(false);
 
+  // Typing animation effect
   useEffect(() => {
     let idx = 0;
     const interval = setInterval(() => {
@@ -28,6 +30,7 @@ const Typewriter = ({ text, speed = 100, cursor = true }: TypewriterProps) => {
     return () => clearInterval(interval);
   }, [text, speed]);
 
+  // Blinking cursor effect
   useEffect(() => {
     if (!cursor || isComplete) return;
     const blink = setInterval(() => setShowCursor(c => !c), 500);
@@ -50,8 +53,9 @@ const Typewriter = ({ text, speed = 100, cursor = true }: TypewriterProps) => {
   );
 };
 
+// --- Main Home Page Component ---
 export default function Home() {
-  // Lines for about section
+  // About section code snippet (displayed with typewriter effect)
   const aboutText = [
     "type Developer = {",
     "  name: 'Vikram Singh Kainth',",
@@ -60,7 +64,7 @@ export default function Home() {
     "};",
   ].join('\n');
 
-  // Framer Motion variants for staggered line animations
+  // Framer Motion animation variants for hero section
   const container = {
     hidden: {},
     show: { transition: { staggerChildren: 0.3 } },
@@ -70,16 +74,8 @@ export default function Home() {
     show: { x: 0, opacity: 1 },
   };
 
-  // Navigation links
-  const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Projects', href: '/pages/projects' },
-    { name: 'Blog', href: '/pages/blog' },
-    { name: 'About', href: '/#about' },
-    { name: 'Contact', href: '/#contact' },
-  ];
-
-  // Power Platform and related icon SVGs (placeholders)
+  // --- Power Platform and related icon SVGs (placeholders) ---
+  // Used in the auto-scrolling banner
   const powerIcons = [
     {
       name: 'Power Apps',
@@ -155,29 +151,21 @@ export default function Home() {
     },
   ];
 
+  // Animation variants for skill icons
+  const skillIconVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1 },
+  };
+
   return (
     <>
+      {/* --- SEO Head --- */}
       <Head>
         <title>Vikram Singh Kainth | Developer Portfolio</title>
       </Head>
 
-      {/* Minimal Gradient Navigation Bar */}
-      <nav className="sticky top-0 z-50 w-full bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-3 flex items-center justify-between">
-        <div className="flex-1" />
-        <div className="flex gap-6">
-          {navLinks.map(link => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-white font-medium text-lg transition-colors hover:text-indigo-200 focus:text-indigo-200 focus:outline-none"
-            >
-              {link.name}
-            </Link>
-          ))}
-        </div>
-      </nav>
-
-      {/* Hero Section */}
+      {/* --- Hero Section --- */}
+      {/* Animated name and hero area */}
       <motion.div 
         className="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-600 to-purple-600"
         initial={{ opacity: 0 }}
@@ -186,6 +174,7 @@ export default function Home() {
         viewport={{ once: true }}
       >
         <div className="text-center p-8">
+          {/* Left curly brace animation */}
           <motion.div
             className="text-6xl md:text-8xl font-mono text-white inline-flex items-center origin-left"
             initial={{ scaleX: 0 }}
@@ -194,6 +183,7 @@ export default function Home() {
           >
             {'{'}
           </motion.div>
+          {/* Name with typewriter effect */}
           <motion.div
             className="inline-block text-5xl md:text-8xl font-mono text-white mx-2 uppercase tracking-wider"
             initial={{ opacity: 0 }}
@@ -202,6 +192,7 @@ export default function Home() {
           >
             <Typewriter text="VIKRAM SINGH KAINTH" speed={120} />
           </motion.div>
+          {/* Right curly brace animation */}
           <motion.div
             className="text-6xl md:text-8xl font-mono text-white inline-flex items-center origin-right"
             initial={{ scaleX: 0 }}
@@ -210,10 +201,38 @@ export default function Home() {
           >
             {'}'}
           </motion.div>
+          {/* Tagline with curly brackets and typewriter */}
+          <div className="mt-6 flex items-center justify-center gap-2">
+            <motion.div
+              className="text-3xl md:text-4xl font-mono text-indigo-200 inline-flex items-center origin-left"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ delay: 2.8, duration: 0.6, ease: 'easeOut' }}
+            >
+              {'{'}
+            </motion.div>
+            <motion.div
+              className="inline-block text-xl md:text-2xl font-mono text-indigo-100 mx-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 3.2, duration: 0.5 }}
+            >
+              <Typewriter text="Power Platform Specialist" speed={40} />
+            </motion.div>
+            <motion.div
+              className="text-3xl md:text-4xl font-mono text-indigo-200 inline-flex items-center origin-right"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ delay: 4, duration: 0.6, ease: 'easeOut' }}
+            >
+              {'}'}
+            </motion.div>
+          </div>
         </div>
       </motion.div>
 
-      {/* About Section */}
+      {/* --- About Section --- */}
+      {/* Animated code snippet about you */}
       <motion.div 
         className="max-w-5xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-8 items-start"
         initial={{ opacity: 0, y: 50 }}
@@ -224,8 +243,7 @@ export default function Home() {
         <div className="font-mono text-lg text-gray-800 bg-gray-100 p-6 rounded-lg">
           <Typewriter text={aboutText} speed={40} cursor={true} />
         </div>
-
-        {/* Placeholder Image */}
+        {/* Placeholder for profile image */}
         <motion.div 
           className="flex items-center justify-center"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -237,7 +255,8 @@ export default function Home() {
         </motion.div>
       </motion.div>
 
-      {/* Power Platform Auto-Scrolling Banner */}
+      {/* --- Power Platform Auto-Scrolling Banner --- */}
+      {/* Carousel of platform icons */}
       <div className="w-full overflow-hidden bg-gradient-to-r from-purple-100 to-indigo-50 py-12">
         <div
           className="flex gap-12 animate-scroll-x items-center"
@@ -252,7 +271,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Featured Projects Showcase */}
+      {/* --- Featured Projects Showcase --- */}
       <section className="w-full py-16 bg-gradient-to-r from-indigo-100 to-purple-200 px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-indigo-700 mb-8 text-center">Featured Projects</h2>
         <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
@@ -274,7 +293,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Latest Blog Excerpts */}
+      {/* --- Latest Blog Excerpts --- */}
       <section className="w-full py-16 bg-white px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-purple-700 mb-8 text-center">Latest Blog Excerpts</h2>
         <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
@@ -289,20 +308,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills Snapshot & Statistics */}
+      {/* --- Skills Snapshot & Statistics --- */}
       <section className="w-full py-16 bg-gradient-to-r from-purple-50 to-indigo-100 px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-indigo-700 mb-8 text-center">Skills Snapshot</h2>
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
           {/* Progress Bars */}
           <div className="flex flex-col gap-6">
-            {[{name:'Power Platform',val:95,color:'indigo'},{name:'React',val:90,color:'blue'},{name:'TypeScript',val:85,color:'purple'},{name:'SharePoint',val:80,color:'emerald'},{name:'Expo',val:75,color:'black'}].map(skill => (
+            {[{name:'Power Platform',val:95,color:'indigo'},{name:'React',val:90,color:'blue'},{name:'TypeScript',val:85,color:'purple'},{name:'SharePoint',val:80,color:'emerald'},{name:'Expo',val:75,color:'black'}].map((skill, idx) => (
               <div key={skill.name}>
                 <div className="flex justify-between mb-1">
                   <span className="font-semibold text-gray-700">{skill.name}</span>
                   <span className="text-xs text-gray-500">{skill.val}%</span>
                 </div>
-                <div className="w-full h-3 bg-gray-200 rounded-full">
-                  <div className={`h-3 rounded-full bg-${skill.color}-500`} style={{width: `${skill.val}%`}}></div>
+                <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+                  <motion.div
+                    className={`h-3 rounded-full bg-${skill.color}-500`}
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${skill.val}%` }}
+                    transition={{ duration: 1, delay: idx * 0.15, ease: 'easeOut' }}
+                    viewport={{ once: false }}
+                  />
                 </div>
               </div>
             ))}
@@ -311,10 +336,18 @@ export default function Home() {
           <div className="flex flex-col items-center gap-6">
             <div className="flex flex-wrap gap-3 justify-center">
               {powerIcons.slice(0,7).map((icon, idx) => (
-                <div key={idx} className="flex flex-col items-center">
+                <motion.div
+                  key={idx}
+                  className="flex flex-col items-center"
+                  variants={skillIconVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  transition={{ delay: idx * 0.12, duration: 0.4, type: 'spring' }}
+                  viewport={{ once: false }}
+                >
                   {icon.svg}
                   <span className="text-xs mt-1 text-gray-700 font-semibold">{icon.name}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
             <div className="mt-6 grid grid-cols-2 gap-4 w-full max-w-xs">
@@ -331,7 +364,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Me Section */}
+      {/* --- Contact Me Section --- */}
       <section id="contact" className="w-full bg-gradient-to-r from-indigo-50 to-purple-50 py-24 px-0 flex justify-center items-center">
         <div className="w-full flex justify-center">
           <div className="w-full max-w-3xl bg-white rounded-xl shadow-lg p-8">
@@ -370,14 +403,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* --- Footer --- */}
       <footer className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-6 mt-0">
         <div className="max-w-4xl mx-auto flex flex-col items-center justify-center gap-2 px-4">
           <span className="font-semibold">© {new Date().getFullYear()} Vikram Singh Kainth</span>
           <span className="text-sm opacity-80">Built with Next.js & React</span>
         </div>
       </footer>
-
     </>
   );
 }
