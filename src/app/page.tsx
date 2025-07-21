@@ -252,6 +252,53 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Contact Me Section */}
+      <section id="contact" className="w-full bg-gradient-to-r from-indigo-50 to-purple-50 py-24 px-0 flex justify-center items-center">
+        <div className="w-full flex justify-center">
+          <div className="w-full max-w-3xl bg-white rounded-xl shadow-lg p-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-indigo-700 mb-2 text-center">Contact Me</h2>
+            <p className="text-gray-600 mb-8 text-center">Let’s work together! Reach out via the form below.</p>
+            <form className="flex flex-col gap-4">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                required
+              />
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                rows={5}
+                className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none"
+                required
+              />
+              <button
+                type="submit"
+                className="mt-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-2 rounded-md shadow-md hover:from-indigo-700 hover:to-purple-700 transition-colors"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-6 mt-0">
+        <div className="max-w-4xl mx-auto flex flex-col items-center justify-center gap-2 px-4">
+          <span className="font-semibold">© {new Date().getFullYear()} Vikram Singh Kainth</span>
+          <span className="text-sm opacity-80">Built with Next.js & React</span>
+        </div>
+      </footer>
+
     </>
   );
 }
