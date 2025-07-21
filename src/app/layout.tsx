@@ -23,7 +23,7 @@ const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'Projects', href: '/projects' },
   { name: 'Blog', href: '/blog' },
-  { name: 'About', href: '/#about' },
+  { name: 'About', href: '/about' },
   { name: 'Contact', href: '/#contact' },
 ];
 
@@ -34,12 +34,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {/* Minimal Gradient Navigation Bar */}
         <nav className="sticky top-0 z-50 w-full bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-3 flex items-center justify-between">
-          <div className="flex-1" />
+          <Link href="/" className="flex items-center">
+            <img src="/favicon.ico" alt="Logo" className="w-8 h-8 mr-4 rounded" />
+          </Link>
           <div className="flex gap-6">
             {navLinks.map(link => (
               <Link
