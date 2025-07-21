@@ -15,7 +15,6 @@ export default function AboutPage() {
             <div className="flex gap-3 mt-2">
               <Link href="/projects" className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold px-4 py-2 rounded shadow hover:from-indigo-700 hover:to-purple-700 transition-colors text-sm">View Projects</Link>
               <Link href="/blog" className="bg-indigo-50 text-indigo-700 font-semibold px-4 py-2 rounded shadow text-sm hover:bg-indigo-100">Read Blog</Link>
-              <a href="/resume.pdf" className="bg-purple-50 text-purple-700 font-semibold px-4 py-2 rounded shadow text-sm hover:bg-purple-100" download>Download Résumé</a>
             </div>
           </div>
         </div>
