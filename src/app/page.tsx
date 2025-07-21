@@ -195,12 +195,12 @@ export default function Home() {
             {'{'}
           </motion.div>
           <motion.div
-            className="inline-block text-4xl md:text-6xl font-mono text-white mx-2"
+            className="inline-block text-5xl md:text-8xl font-mono text-white mx-2 uppercase tracking-wider"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.5 }}
           >
-            <Typewriter text="Vikram Singh Kainth" speed={120} />
+            <Typewriter text="VIKRAM SINGH KAINTH" speed={120} />
           </motion.div>
           <motion.div
             className="text-6xl md:text-8xl font-mono text-white inline-flex items-center origin-right"
@@ -238,7 +238,7 @@ export default function Home() {
       </motion.div>
 
       {/* Power Platform Auto-Scrolling Banner */}
-      <div className="w-full overflow-hidden bg-white">
+      <div className="w-full overflow-hidden bg-gradient-to-r from-purple-100 to-indigo-50 py-12">
         <div
           className="flex gap-12 animate-scroll-x items-center"
           style={{ width: 'max-content' }}
@@ -251,6 +251,85 @@ export default function Home() {
           ))}
         </div>
       </div>
+
+      {/* Featured Projects Showcase */}
+      <section className="w-full py-16 bg-gradient-to-r from-indigo-100 to-purple-200 px-4">
+        <h2 className="text-2xl md:text-3xl font-bold text-indigo-700 mb-8 text-center">Featured Projects</h2>
+        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+          {[1,2,3].map((i) => (
+            <div key={i} className="bg-white rounded-xl shadow-md p-6 flex flex-col gap-4">
+              <div className="flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-indigo-500"></span>
+                <span className="font-semibold text-lg">Project Title {i}</span>
+              </div>
+              <p className="text-gray-600 text-sm flex-1">Short description of the project goes here. Highlight the tech and impact.</p>
+              <div className="flex gap-2 flex-wrap">
+                <span className="bg-indigo-100 text-indigo-700 px-2 py-1 rounded text-xs font-mono">React</span>
+                <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-mono">Power Apps</span>
+                <span className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs font-mono">TypeScript</span>
+              </div>
+              <a href="#" className="mt-2 text-indigo-600 hover:underline font-semibold text-sm">View Project →</a>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Latest Blog Excerpts */}
+      <section className="w-full py-16 bg-white px-4">
+        <h2 className="text-2xl md:text-3xl font-bold text-purple-700 mb-8 text-center">Latest Blog Excerpts</h2>
+        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+          {[1,2,3].map((i) => (
+            <div key={i} className="bg-gradient-to-br from-indigo-50 to-purple-100 rounded-xl shadow p-6 flex flex-col gap-4">
+              <span className="text-xs text-gray-500">2024-06-0{i}</span>
+              <span className="font-semibold text-lg">Blog Post Title {i}</span>
+              <p className="text-gray-700 text-sm flex-1">A short excerpt from the blog post goes here. This should entice the reader to click through.</p>
+              <a href="#" className="mt-2 text-purple-700 hover:underline font-semibold text-sm">Read More →</a>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Skills Snapshot & Statistics */}
+      <section className="w-full py-16 bg-gradient-to-r from-purple-50 to-indigo-100 px-4">
+        <h2 className="text-2xl md:text-3xl font-bold text-indigo-700 mb-8 text-center">Skills Snapshot</h2>
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+          {/* Progress Bars */}
+          <div className="flex flex-col gap-6">
+            {[{name:'Power Platform',val:95,color:'indigo'},{name:'React',val:90,color:'blue'},{name:'TypeScript',val:85,color:'purple'},{name:'SharePoint',val:80,color:'emerald'},{name:'Expo',val:75,color:'black'}].map(skill => (
+              <div key={skill.name}>
+                <div className="flex justify-between mb-1">
+                  <span className="font-semibold text-gray-700">{skill.name}</span>
+                  <span className="text-xs text-gray-500">{skill.val}%</span>
+                </div>
+                <div className="w-full h-3 bg-gray-200 rounded-full">
+                  <div className={`h-3 rounded-full bg-${skill.color}-500`} style={{width: `${skill.val}%`}}></div>
+                </div>
+              </div>
+            ))}
+          </div>
+          {/* Icon Badges & Quick Stats */}
+          <div className="flex flex-col items-center gap-6">
+            <div className="flex flex-wrap gap-3 justify-center">
+              {powerIcons.slice(0,7).map((icon, idx) => (
+                <div key={idx} className="flex flex-col items-center">
+                  {icon.svg}
+                  <span className="text-xs mt-1 text-gray-700 font-semibold">{icon.name}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 grid grid-cols-2 gap-4 w-full max-w-xs">
+              <div className="bg-white rounded-lg shadow p-4 text-center">
+                <span className="block text-xl font-bold text-indigo-700">5+</span>
+                <span className="text-xs text-gray-500">Years Experience</span>
+              </div>
+              <div className="bg-white rounded-lg shadow p-4 text-center">
+                <span className="block text-xl font-bold text-indigo-700">20+</span>
+                <span className="text-xs text-gray-500">Projects</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Contact Me Section */}
       <section id="contact" className="w-full bg-gradient-to-r from-indigo-50 to-purple-50 py-24 px-0 flex justify-center items-center">
