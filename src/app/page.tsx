@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
+import Link from 'next/link';
 
 // Simple typewriter effect
 interface TypewriterProps {
@@ -69,11 +70,36 @@ export default function Home() {
     show: { x: 0, opacity: 1 },
   };
 
+  // Navigation links
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'Projects', href: '/pages/projects' },
+    { name: 'Blog', href: '/pages/blog' },
+    { name: 'About', href: '/#about' },
+    { name: 'Contact', href: '/#contact' },
+  ];
+
   return (
     <>
       <Head>
         <title>Vikram Singh Kainth | Developer Portfolio</title>
       </Head>
+
+      {/* Minimal Gradient Navigation Bar */}
+      <nav className="sticky top-0 z-50 w-full bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-3 flex items-center justify-between">
+        <div className="flex-1" />
+        <div className="flex gap-6">
+          {navLinks.map(link => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="text-white font-medium text-lg transition-colors hover:text-indigo-200 focus:text-indigo-200 focus:outline-none"
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
+      </nav>
 
       {/* Hero Section */}
       <motion.div 
