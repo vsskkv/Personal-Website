@@ -33,3 +33,11 @@ body {
 .animate-blink {
   animation: blink 1s step-end infinite;
 }
+
+.animate-scroll-x {
+  animation: scroll-x 18s linear infinite;
+}
+@keyframes scroll-x {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

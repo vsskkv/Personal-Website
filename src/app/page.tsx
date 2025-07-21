@@ -79,6 +79,82 @@ export default function Home() {
     { name: 'Contact', href: '/#contact' },
   ];
 
+  // Power Platform and related icon SVGs (placeholders)
+  const powerIcons = [
+    {
+      name: 'Power Apps',
+      svg: (
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="48" height="48" rx="12" fill="#742774" />
+          <text x="24" y="28" textAnchor="middle" fontSize="12" fill="white" fontFamily="sans-serif">Apps</text>
+        </svg>
+      ),
+    },
+    {
+      name: 'Power Automate',
+      svg: (
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="48" height="48" rx="12" fill="#0066FF" />
+          <text x="24" y="28" textAnchor="middle" fontSize="10" fill="white" fontFamily="sans-serif">Automate</text>
+        </svg>
+      ),
+    },
+    {
+      name: 'Power BI',
+      svg: (
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="48" height="48" rx="12" fill="#F2C811" />
+          <text x="24" y="28" textAnchor="middle" fontSize="14" fill="#333" fontFamily="sans-serif">BI</text>
+        </svg>
+      ),
+    },
+    {
+      name: 'Power Pages',
+      svg: (
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="48" height="48" rx="12" fill="#0078D4" />
+          <text x="24" y="28" textAnchor="middle" fontSize="10" fill="white" fontFamily="sans-serif">Pages</text>
+        </svg>
+      ),
+    },
+    {
+      name: 'Dataverse',
+      svg: (
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="48" height="48" rx="12" fill="#8A2DA5" />
+          <text x="24" y="28" textAnchor="middle" fontSize="10" fill="white" fontFamily="sans-serif">Dataverse</text>
+        </svg>
+      ),
+    },
+    {
+      name: 'SharePoint',
+      svg: (
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="48" height="48" rx="12" fill="#007C70" />
+          <text x="24" y="28" textAnchor="middle" fontSize="10" fill="white" fontFamily="sans-serif">SharePoint</text>
+        </svg>
+      ),
+    },
+    {
+      name: 'React Native',
+      svg: (
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="48" height="48" rx="12" fill="#61DAFB" />
+          <text x="24" y="28" textAnchor="middle" fontSize="10" fill="#222" fontFamily="sans-serif">React</text>
+        </svg>
+      ),
+    },
+    {
+      name: 'Expo',
+      svg: (
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="48" height="48" rx="12" fill="#000" />
+          <text x="24" y="28" textAnchor="middle" fontSize="12" fill="#fff" fontFamily="sans-serif">Expo</text>
+        </svg>
+      ),
+    },
+  ];
+
   return (
     <>
       <Head>
@@ -160,6 +236,22 @@ export default function Home() {
           <div className="w-48 h-48 bg-gray-300 rounded-full" />
         </motion.div>
       </motion.div>
+
+      {/* Power Platform Auto-Scrolling Banner */}
+      <div className="w-full overflow-hidden bg-white">
+        <div
+          className="flex gap-12 animate-scroll-x items-center"
+          style={{ width: 'max-content' }}
+        >
+          {Array(3).fill(powerIcons).flat().map((icon, idx) => (
+            <div key={idx} className="flex flex-col items-center min-w-[64px]">
+              {icon.svg}
+              <span className="mt-2 text-xs text-gray-700 font-semibold">{icon.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
     </>
   );
 }
