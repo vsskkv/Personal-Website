@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import { blogPosts } from '../data';
 
+// Required for static export
+export const dynamic = 'force-static';
+
 export async function GET() {
   const siteUrl = 'https://YOUR_DOMAIN.com'; // <-- Replace with your domain
   const publishedPosts = blogPosts.filter(post => post.published);
