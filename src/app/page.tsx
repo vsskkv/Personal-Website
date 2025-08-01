@@ -161,10 +161,10 @@ export default function Home() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <div className="text-center p-8">
+        <div className="text-center p-4 sm:p-6 md:p-8">
           {/* Left curly brace animation */}
           <motion.div
-            className="text-6xl md:text-8xl font-mono text-white inline-flex items-center origin-left"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-mono text-white inline-flex items-center origin-left"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -173,7 +173,7 @@ export default function Home() {
           </motion.div>
           {/* Name with typewriter effect */}
           <motion.div
-            className="inline-block text-5xl md:text-8xl font-mono text-white mx-2 uppercase tracking-wider"
+            className="inline-block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-mono text-white mx-1 sm:mx-2 uppercase tracking-wider"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.5 }}
@@ -182,7 +182,7 @@ export default function Home() {
           </motion.div>
           {/* Right curly brace animation */}
           <motion.div
-            className="text-6xl md:text-8xl font-mono text-white inline-flex items-center origin-right"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-mono text-white inline-flex items-center origin-right"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ delay: 2, duration: 0.8, ease: 'easeOut' }}
@@ -190,9 +190,9 @@ export default function Home() {
             {'}'}
           </motion.div>
           {/* Tagline with curly brackets and typewriter */}
-          <div className="mt-6 flex items-center justify-center gap-2">
+          <div className="mt-4 sm:mt-6 flex items-center justify-center gap-1 sm:gap-2">
             <motion.div
-              className="text-3xl md:text-4xl font-mono text-indigo-200 inline-flex items-center origin-left"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-mono text-indigo-200 inline-flex items-center origin-left"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ delay: 2.8, duration: 0.6, ease: 'easeOut' }}
@@ -200,7 +200,7 @@ export default function Home() {
               {'{'}
             </motion.div>
             <motion.div
-              className="inline-block text-xl md:text-2xl font-mono text-indigo-100 mx-2"
+              className="inline-block text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-mono text-indigo-100 mx-1 sm:mx-2"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 3.2, duration: 0.5 }}
@@ -208,7 +208,7 @@ export default function Home() {
               <Typewriter text="Power Platform Specialist" speed={40} />
             </motion.div>
             <motion.div
-              className="text-3xl md:text-4xl font-mono text-indigo-200 inline-flex items-center origin-right"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-mono text-indigo-200 inline-flex items-center origin-right"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ delay: 4, duration: 0.6, ease: 'easeOut' }}
