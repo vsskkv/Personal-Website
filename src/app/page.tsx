@@ -65,34 +65,31 @@ export default function Home() {
 
   // Framer Motion animation variants for hero section
 
-  // --- Power Platform and related icon SVGs (placeholders) ---
+  // --- Power Platform and related icon images ---
   // Used in the auto-scrolling banner
   const powerIcons = [
     {
       name: 'Power Apps',
       svg: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="48" height="48" rx="12" fill="#742774" />
-          <text x="24" y="28" textAnchor="middle" fontSize="12" fill="white" fontFamily="sans-serif">Apps</text>
-        </svg>
+        <div className="w-12 h-12 flex items-center justify-center">
+          <img src="/powerapps.png" alt="Power Apps" className="w-full h-full object-contain" />
+        </div>
       ),
     },
     {
       name: 'Power Automate',
       svg: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="48" height="48" rx="12" fill="#0066FF" />
-          <text x="24" y="28" textAnchor="middle" fontSize="10" fill="white" fontFamily="sans-serif">Automate</text>
-        </svg>
+        <div className="w-12 h-12 flex items-center justify-center">
+          <img src="/pa.png" alt="Power Automate" className="w-full h-full object-contain" />
+        </div>
       ),
     },
     {
       name: 'Power BI',
       svg: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="48" height="48" rx="12" fill="#F2C811" />
-          <text x="24" y="28" textAnchor="middle" fontSize="14" fill="#333" fontFamily="sans-serif">BI</text>
-        </svg>
+        <div className="w-12 h-12 flex items-center justify-center">
+          <img src="/power bi.png" alt="Power BI" className="w-full h-full object-contain" />
+        </div>
       ),
     },
     {
@@ -320,7 +317,13 @@ export default function Home() {
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
           {/* Progress Bars */}
           <div className="flex flex-col gap-6">
-            {[{name:'Power Platform',val:95,color:'indigo'},{name:'React',val:90,color:'blue'},{name:'TypeScript',val:85,color:'purple'},{name:'SharePoint',val:80,color:'emerald'},{name:'Expo',val:75,color:'black'}].map((skill, idx) => (
+            {[
+              {name:'Power Platform',val:95,colorClass:'bg-indigo-500'},
+              {name:'React',val:90,colorClass:'bg-blue-500'},
+              {name:'TypeScript',val:85,colorClass:'bg-purple-500'},
+              {name:'SharePoint',val:80,colorClass:'bg-emerald-500'},
+              {name:'Expo',val:75,colorClass:'bg-gray-800'}
+            ].map((skill, idx) => (
               <div key={skill.name}>
                 <div className="flex justify-between mb-1">
                   <span className="font-semibold text-gray-700">{skill.name}</span>
@@ -328,7 +331,7 @@ export default function Home() {
                 </div>
                 <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
                   <motion.div
-                    className={`h-3 rounded-full bg-${skill.color}-500`}
+                    className={`h-3 rounded-full ${skill.colorClass}`}
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.val}%` }}
                     transition={{ duration: 1, delay: idx * 0.15, ease: 'easeOut' }}
