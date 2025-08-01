@@ -1,56 +1,8 @@
 "use client";
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
-
-// --- Typewriter effect component ---
-// This component animates text as if it's being typed out, with an optional blinking cursor.
-interface TypewriterProps {
-  text: string;
-  speed?: number;
-  cursor?: boolean;
-}
-const Typewriter = ({ text, speed = 100, cursor = true }: TypewriterProps) => {
-  const [displayed, setDisplayed] = useState('');
-  const [showCursor, setShowCursor] = useState(true);
-  const [isComplete, setIsComplete] = useState(false);
-
-  // Typing animation effect
-  useEffect(() => {
-    let idx = 0;
-    const interval = setInterval(() => {
-      setDisplayed(text.slice(0, idx + 1));
-      idx++;
-      if (idx >= text.length) {
-        clearInterval(interval);
-        setIsComplete(true);
-      }
-    }, speed);
-    return () => clearInterval(interval);
-  }, [text, speed]);
-
-  // Blinking cursor effect
-  useEffect(() => {
-    if (!cursor || isComplete) return;
-    const blink = setInterval(() => setShowCursor(c => !c), 500);
-    return () => clearInterval(blink);
-  }, [cursor, isComplete]);
-
-  // Support multiline text
-  const lines = displayed.split('\n');
-
-  return (
-    <span className="whitespace-pre-wrap break-words">
-      {lines.map((line, i) => (
-        <span key={i}>
-          {line}
-          {i < lines.length - 1 && '\n'}
-        </span>
-      ))}
-      {cursor && showCursor && !isComplete && <span className="animate-blink">|</span>}
-    </span>
-  );
-};
+import { Typewriter } from '@/components/Typewriter';
+import { powerIcons } from '@/lib/power-platform-icons';
 
 // --- Main Home Page Component ---
 export default function Home() {
@@ -64,80 +16,6 @@ export default function Home() {
   ].join('\n');
 
   // Framer Motion animation variants for hero section
-
-  // --- Power Platform and related icon images ---
-  // Used in the auto-scrolling banner
-  const powerIcons = [
-    {
-      name: 'Power Apps',
-      svg: (
-        <div className="w-12 h-12 flex items-center justify-center">
-          <img src="/powerapps.png" alt="Power Apps" className="w-full h-full object-contain" />
-        </div>
-      ),
-    },
-    {
-      name: 'Power Automate',
-      svg: (
-        <div className="w-12 h-12 flex items-center justify-center">
-          <img src="/pa.png" alt="Power Automate" className="w-full h-full object-contain" />
-        </div>
-      ),
-    },
-    {
-      name: 'Power BI',
-      svg: (
-        <div className="w-12 h-12 flex items-center justify-center">
-          <img src="/power bi.png" alt="Power BI" className="w-full h-full object-contain" />
-        </div>
-      ),
-    },
-    {
-      name: 'Power Pages',
-      svg: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="48" height="48" rx="12" fill="#0078D4" />
-          <text x="24" y="28" textAnchor="middle" fontSize="10" fill="white" fontFamily="sans-serif">Pages</text>
-        </svg>
-      ),
-    },
-    {
-      name: 'Dataverse',
-      svg: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="48" height="48" rx="12" fill="#8A2DA5" />
-          <text x="24" y="28" textAnchor="middle" fontSize="10" fill="white" fontFamily="sans-serif">Dataverse</text>
-        </svg>
-      ),
-    },
-    {
-      name: 'SharePoint',
-      svg: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="48" height="48" rx="12" fill="#007C70" />
-          <text x="24" y="28" textAnchor="middle" fontSize="10" fill="white" fontFamily="sans-serif">SharePoint</text>
-        </svg>
-      ),
-    },
-    {
-      name: 'React Native',
-      svg: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="48" height="48" rx="12" fill="#61DAFB" />
-          <text x="24" y="28" textAnchor="middle" fontSize="10" fill="#222" fontFamily="sans-serif">React</text>
-        </svg>
-      ),
-    },
-    {
-      name: 'Expo',
-      svg: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="48" height="48" rx="12" fill="#000" />
-          <text x="24" y="28" textAnchor="middle" fontSize="12" fill="#fff" fontFamily="sans-serif">Expo</text>
-        </svg>
-      ),
-    },
-  ];
 
   // Animation variants for skill icons
   const skillIconVariants = {
@@ -241,7 +119,7 @@ export default function Home() {
         >
           <div className="w-48 h-48 rounded-full overflow-hidden shadow-lg border-4 border-white">
             <img 
-              src="/avatar.png" 
+              src="/images/avatar.png" 
               alt="Vikram Singh Kainth - Power Platform Specialist" 
               className="w-full h-full object-cover"
               onError={(e) => {

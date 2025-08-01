@@ -18,12 +18,12 @@ export const metadata: Metadata = {
   description: "Made by Vikram Singh Kainth",
   icons: {
     icon: [
-      { url: '/favicon.ico?v=2', sizes: 'any' },
-      { url: '/favicon.ico?v=2', sizes: '32x32' },
-      { url: '/favicon.ico?v=2', sizes: '16x16' },
+      { url: '/favicon.ico?v=3', sizes: 'any' },
+      { url: '/favicon.ico?v=3', sizes: '32x32' },
+      { url: '/favicon.ico?v=3', sizes: '16x16' },
     ],
-    shortcut: '/favicon.ico?v=2',
-    apple: '/favicon.ico?v=2',
+    shortcut: '/favicon.ico?v=3',
+    apple: '/favicon.ico?v=3',
   },
 };
 
