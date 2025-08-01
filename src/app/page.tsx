@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
-import Link from 'next/link';
 
 // --- Typewriter effect component ---
 // This component animates text as if it's being typed out, with an optional blinking cursor.
@@ -65,14 +64,6 @@ export default function Home() {
   ].join('\n');
 
   // Framer Motion animation variants for hero section
-  const container = {
-    hidden: {},
-    show: { transition: { staggerChildren: 0.3 } },
-  };
-  const child = {
-    hidden: { x: -30, opacity: 0 },
-    show: { x: 0, opacity: 1 },
-  };
 
   // --- Power Platform and related icon SVGs (placeholders) ---
   // Used in the auto-scrolling banner
@@ -243,7 +234,7 @@ export default function Home() {
         <div className="font-mono text-lg text-gray-800 bg-gray-100 p-6 rounded-lg">
           <Typewriter text={aboutText} speed={40} cursor={true} />
         </div>
-        {/* Placeholder for profile image */}
+        {/* Profile image */}
         <motion.div 
           className="flex items-center justify-center"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -251,7 +242,22 @@ export default function Home() {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <div className="w-48 h-48 bg-gray-300 rounded-full" />
+          <div className="w-48 h-48 rounded-full overflow-hidden shadow-lg border-4 border-white">
+            <img 
+              src="/avatar.png" 
+              alt="Vikram Singh Kainth - Power Platform Specialist" 
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                // Fallback to a placeholder if image fails to load
+                e.currentTarget.style.display = 'none';
+                e.currentTarget.nextElementSibling.style.display = 'block';
+              }}
+            />
+            {/* Fallback placeholder */}
+            <div className="w-full h-full bg-gradient-to-br from-indigo-400 to-purple-600 flex items-center justify-center text-white text-4xl font-bold" style={{ display: 'none' }}>
+              VK
+            </div>
+          </div>
         </motion.div>
       </motion.div>
 
