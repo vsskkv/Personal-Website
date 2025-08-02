@@ -8,7 +8,7 @@ export default function ProjectsPage() {
     <main className="min-h-screen w-full bg-gradient-to-r from-indigo-50 to-purple-50 py-16 px-4">
       <div className="max-w-5xl mx-auto">
         <h1 className="text-3xl md:text-5xl font-bold text-indigo-700 mb-8 text-center uppercase tracking-wider">Projects</h1>
-        <p className="text-center text-gray-600 mb-12 text-lg">A showcase of my featured work across the Power Platform, SharePoint, and modern web technologies.</p>
+        <p className="text-center text-gray-600 mb-12 text-lg">A showcase of my featured work across academic research and game development.</p>
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, idx) => (
             <motion.div
@@ -20,6 +20,12 @@ export default function ProjectsPage() {
               className="bg-white rounded-xl shadow-md p-6 flex flex-col gap-4 hover:shadow-lg transition-shadow"
             >
               <span className="font-semibold text-xl text-indigo-800">{project.title}</span>
+              {project.date && (
+                <span className="text-sm text-gray-500">{project.date}</span>
+              )}
+              {project.institution && (
+                <span className="text-sm text-indigo-600 font-medium">{project.institution}</span>
+              )}
               <p className="text-gray-700 flex-1">{project.description}</p>
               <div className="flex gap-2 flex-wrap mt-2">
                 {project.tech.map((tech, i) => (

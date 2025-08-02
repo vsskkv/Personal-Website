@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import Head from 'next/head';
 import { Typewriter } from '@/components/Typewriter';
 import { powerIcons } from '@/lib/power-platform-icons';
+import { projects } from './projects/data';
+import { blogPosts } from './blog/data';
 
 // --- Main Home Page Component ---
 export default function Home() {
@@ -155,21 +157,34 @@ export default function Home() {
       {/* --- Featured Projects Showcase --- */}
       <section className="w-full py-16 bg-gradient-to-r from-indigo-100 to-purple-200 px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-indigo-700 mb-8 text-center">Featured Projects</h2>
-        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
-          {[1,2,3].map((i) => (
-            <div key={i} className="bg-white rounded-xl shadow-md p-6 flex flex-col gap-4">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+          {projects.map((project, idx) => (
+            <motion.div
+              key={project.slug}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: idx * 0.12, ease: 'easeOut' }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl shadow-md p-6 flex flex-col gap-4 hover:shadow-lg transition-shadow"
+            >
               <div className="flex items-center gap-2">
                 <span className="inline-block w-2 h-2 rounded-full bg-indigo-500"></span>
-                <span className="font-semibold text-lg">Project Title {i}</span>
+                <span className="font-semibold text-lg">{project.title}</span>
               </div>
-              <p className="text-gray-600 text-sm flex-1">Short description of the project goes here. Highlight the tech and impact.</p>
+              {project.date && (
+                <span className="text-sm text-gray-500">{project.date}</span>
+              )}
+              <p className="text-gray-600 text-sm flex-1">{project.description}</p>
               <div className="flex gap-2 flex-wrap">
-                <span className="bg-indigo-100 text-indigo-700 px-2 py-1 rounded text-xs font-mono">React</span>
-                <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-mono">Power Apps</span>
-                <span className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs font-mono">TypeScript</span>
+                {project.tech.slice(0, 3).map((tech, i) => (
+                  <span key={i} className="bg-indigo-100 text-indigo-700 px-2 py-1 rounded text-xs font-mono">{tech}</span>
+                ))}
+                {project.tech.length > 3 && (
+                  <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-mono">+{project.tech.length - 3} more</span>
+                )}
               </div>
-              <a href="#" className="mt-2 text-indigo-600 hover:underline font-semibold text-sm">View Project →</a>
-            </div>
+              <a href={`/projects/${project.slug}`} className="mt-2 text-indigo-600 hover:underline font-semibold text-sm">View Project →</a>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -178,13 +193,20 @@ export default function Home() {
       <section className="w-full py-16 bg-white px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-purple-700 mb-8 text-center">Latest Blog Excerpts</h2>
         <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
-          {[1,2,3].map((i) => (
-            <div key={i} className="bg-gradient-to-br from-indigo-50 to-purple-100 rounded-xl shadow p-6 flex flex-col gap-4">
-              <span className="text-xs text-gray-500">2024-06-0{i}</span>
-              <span className="font-semibold text-lg">Blog Post Title {i}</span>
-              <p className="text-gray-700 text-sm flex-1">A short excerpt from the blog post goes here. This should entice the reader to click through.</p>
-              <a href="#" className="mt-2 text-purple-700 hover:underline font-semibold text-sm">Read More →</a>
-            </div>
+          {blogPosts.slice(0, 3).map((post, idx) => (
+            <motion.div
+              key={post.slug}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: idx * 0.12, ease: 'easeOut' }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-indigo-50 to-purple-100 rounded-xl shadow p-6 flex flex-col gap-4 hover:shadow-lg transition-shadow"
+            >
+              <span className="text-xs text-gray-500">{post.date}</span>
+              <span className="font-semibold text-lg">{post.title}</span>
+              <p className="text-gray-700 text-sm flex-1">{post.excerpt}</p>
+              <a href={`/blog/${post.slug}`} className="mt-2 text-purple-700 hover:underline font-semibold text-sm">Read More →</a>
+            </motion.div>
           ))}
         </div>
       </section>

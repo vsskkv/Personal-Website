@@ -1,41 +1,25 @@
 export const projects = [
-  // --- Example Project 1 ---
+  // --- Robotic Evolution Project ---
   {
-    slug: "power-platform-suite",
-    title: "Power Platform Automation Suite",
-    description: "A suite of tools built on Power Apps and Power Automate to streamline business workflows and reporting.",
-    tech: ["Power Apps", "Power Automate", "Dataverse"],
-    details: `This project automates business processes using Power Apps for the UI and Power Automate for backend workflows. It integrates with Dataverse for secure data storage and provides dashboards for analytics.`,
+    slug: "robotic-evolution",
+    title: "Robotic Evolution: Complex Behaviours",
+    description: "Final year thesis investigating the correlation between pathfinding algorithm parameters and efficiency using game tag simulation.",
+    tech: ["Python", "Algorithms", "Simulation", "Research"],
+    details: `I wrote a thesis that answers the question of whether the number of parameters a pathfinding algorithm takes directly correlates to its efficiency. Each pathfinding algorithm was tested using a simulation based on the game tag and was run 100 times to define each algorithm's average time to catch the runner. The different algorithms tested were random movement, Dijkstra's algorithm, A* algorithm and jump point search. The deliverables were able to show a strong correlation between efficiency and the number of parameters; as the parameters increased, the algorithm got better at catching the runner in the quickest number of cycles. The paper concludes that more parameters do equate to better efficiency when catching the runner within the simulation.`,
     image: "/globe.svg",
+    date: "Sep 2020 - May 2021",
+    institution: "Aston University"
   },
 
-  // --- Example Project 2 ---
+  // --- Fractured Knight Game Project ---
   {
-    slug: "sharepoint-knowledge-hub",
-    title: "SharePoint Knowledge Hub",
-    description: "A modern SharePoint site for document management, team collaboration, and knowledge sharing.",
-    tech: ["SharePoint", "React", "TypeScript"],
-    details: `A robust knowledge management portal built on SharePoint, enhanced with custom React components and TypeScript for type safety. Features include document libraries, team wikis, and advanced search.`,
+    slug: "fractured-knight",
+    title: "Adventure Game | Fractured Knight",
+    description: "Team-developed game using Godot IDE and C game engine, implementing Scrum and Agile methodologies.",
+    tech: ["Godot", "C", "Scrum", "Agile", "Game Development"],
+    details: `Working in a team to develop a game using the Godot IDE and a C game engine. Using Scrum development framework and Agile. Develop game Structure and implement algorithms. Leader of the technical team - Process tasks and run the development. Learnt a new Language with ease.`,
     image: "/window.svg",
-  },
-
-  // --- Example Project 3 ---
-  {
-    slug: "bi-dashboard-portal",
-    title: "BI Dashboard Portal",
-    description: "Interactive Power BI dashboards for real-time business intelligence and analytics.",
-    tech: ["Power BI", "DAX", "Power Platform"],
-    details: `A collection of Power BI dashboards that visualize business KPIs in real time. Utilizes DAX for complex calculations and integrates with other Power Platform tools for data enrichment.`,
-    image: "/vercel.svg",
-  },
-
-  // --- Example Project 4 ---
-  {
-    slug: "mobile-field-app",
-    title: "Mobile Field App",
-    description: "A React Native & Expo app for field workers to log data and sync with Dataverse.",
-    tech: ["React Native", "Expo", "Dataverse"],
-    details: `A cross-platform mobile app built with React Native and Expo, allowing field workers to collect and sync data with Dataverse, even offline. Includes photo capture, GPS, and push notifications.`,
-    image: "/next.svg",
+    date: "Sep 2018 - May 2019",
+    institution: "Aston University"
   },
 ]; 
