@@ -5,9 +5,13 @@ import { Typewriter } from '@/components/Typewriter';
 import { powerIcons } from '@/lib/power-platform-icons';
 import { projects } from './projects/data';
 import { blogPosts } from './blog/data';
+import { useState } from 'react';
 
 // --- Main Home Page Component ---
 export default function Home() {
+  const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [formMessage, setFormMessage] = useState('');
+
   // About section code snippet (displayed with typewriter effect)
   const aboutText = [
     "type Developer = {",
@@ -16,6 +20,44 @@ export default function Home() {
     "  skills: ['Power Platform', 'Next.js', 'TypeScript'],",
     "};",
   ].join('\n');
+
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus('loading');
+    setFormMessage('');
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      message: formData.get('message') as string,
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setFormStatus('success');
+        setFormMessage(result.message);
+        e.currentTarget.reset();
+      } else {
+        setFormStatus('error');
+        setFormMessage(result.error || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      setFormStatus('error');
+      setFormMessage('Network error. Please check your connection and try again.');
+    }
+  };
 
   // Framer Motion animation variants for hero section
 
@@ -161,15 +203,21 @@ export default function Home() {
           {projects.map((project, idx) => (
             <motion.div
               key={project.slug}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: idx * 0.12, ease: 'easeOut' }}
-              viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-md p-6 flex flex-col gap-4 hover:shadow-lg transition-shadow"
+              initial={{ opacity: 0, x: -50, scale: 0.95 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: idx * 0.15, 
+                ease: [0.25, 0.46, 0.45, 0.94],
+                type: "spring",
+                stiffness: 100
+              }}
+              viewport={{ once: true, margin: "-50px" }}
+              className="bg-white rounded-xl shadow-md p-6 flex flex-col gap-4 hover:shadow-lg transition-all duration-300 hover:scale-105"
             >
               <div className="flex items-center gap-2">
                 <span className="inline-block w-2 h-2 rounded-full bg-indigo-500"></span>
-                <span className="font-semibold text-lg">{project.title}</span>
+                <span className="font-bold text-xl text-gray-900">{project.title}</span>
               </div>
               {project.date && (
                 <span className="text-sm text-gray-500">{project.date}</span>
@@ -196,14 +244,20 @@ export default function Home() {
           {blogPosts.slice(0, 3).map((post, idx) => (
             <motion.div
               key={post.slug}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: idx * 0.12, ease: 'easeOut' }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-indigo-50 to-purple-100 rounded-xl shadow p-6 flex flex-col gap-4 hover:shadow-lg transition-shadow"
+              initial={{ opacity: 0, x: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: idx * 0.15, 
+                ease: [0.25, 0.46, 0.45, 0.94],
+                type: "spring",
+                stiffness: 100
+              }}
+              viewport={{ once: true, margin: "-50px" }}
+              className="bg-gradient-to-br from-indigo-50 to-purple-100 rounded-xl shadow p-6 flex flex-col gap-4 hover:shadow-lg transition-all duration-300 hover:scale-105"
             >
               <span className="text-xs text-gray-500">{post.date}</span>
-              <span className="font-semibold text-lg">{post.title}</span>
+              <span className="font-bold text-xl text-gray-900 leading-tight">{post.title}</span>
               <p className="text-gray-700 text-sm flex-1">{post.excerpt}</p>
               <a href={`/blog/${post.slug}`} className="mt-2 text-purple-700 hover:underline font-semibold text-sm">Read More →</a>
             </motion.div>
@@ -279,33 +333,52 @@ export default function Home() {
           <div className="w-full max-w-3xl bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-2xl md:text-3xl font-bold text-indigo-700 mb-2 text-center">Contact Me</h2>
             <p className="text-gray-600 mb-8 text-center">Let’s work together! Reach out via the form below.</p>
-            <form className="flex flex-col gap-4">
+            {/* Status Message */}
+            {formMessage && (
+              <div className={`mb-4 p-4 rounded-md ${
+                formStatus === 'success' 
+                  ? 'bg-green-100 text-green-700 border border-green-200' 
+                  : 'bg-red-100 text-red-700 border border-red-200'
+              }`}>
+                {formMessage}
+              </div>
+            )}
+            
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <input
                 type="text"
                 name="name"
                 placeholder="Your Name"
-                className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 placeholder-gray-500"
                 required
+                disabled={formStatus === 'loading'}
               />
               <input
                 type="email"
                 name="email"
                 placeholder="Your Email"
-                className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 placeholder-gray-500"
                 required
+                disabled={formStatus === 'loading'}
               />
               <textarea
                 name="message"
                 placeholder="Your Message"
                 rows={5}
-                className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none"
+                className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none text-gray-900 placeholder-gray-500"
                 required
+                disabled={formStatus === 'loading'}
               />
               <button
                 type="submit"
-                className="mt-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-2 rounded-md shadow-md hover:from-indigo-700 hover:to-purple-700 transition-colors"
+                disabled={formStatus === 'loading'}
+                className={`mt-2 font-semibold py-2 rounded-md shadow-md transition-colors ${
+                  formStatus === 'loading'
+                    ? 'bg-gray-400 cursor-not-allowed'
+                    : 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700'
+                }`}
               >
-                Send Message
+                {formStatus === 'loading' ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
@@ -315,7 +388,7 @@ export default function Home() {
       {/* --- Footer --- */}
       <footer className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-6 mt-0">
         <div className="max-w-4xl mx-auto flex flex-col items-center justify-center gap-2 px-4">
-          <span className="font-semibold">© {new Date().getFullYear()} Vikram Singh Kainth</span>
+          <span className="font-semibold">© 2024 Vikram Singh Kainth</span>
           <span className="text-sm opacity-80">Built with Next.js & React</span>
         </div>
       </footer>
