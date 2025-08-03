@@ -3,15 +3,8 @@ compatibility_date = "2025-08-03"
 
 [build]
 command = "npm run build"
-cwd = "./"
-upload_format = "directory"
 
 [build.environment]
 NODE_VERSION = "18"
 
-[build.output]
-path = ".next"
-
-[site]
-bucket = ".next"
-entry-point = "." 
+pages_build_output_dir = ".next" 
