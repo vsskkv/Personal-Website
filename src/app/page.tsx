@@ -169,7 +169,10 @@ export default function Home() {
               onError={(e) => {
                 // Fallback to a placeholder if image fails to load
                 e.currentTarget.style.display = 'none';
-                e.currentTarget.nextElementSibling.style.display = 'block';
+                const nextSibling = e.currentTarget.nextElementSibling as HTMLElement;
+                if (nextSibling) {
+                  nextSibling.style.display = 'block';
+                }
               }}
             />
             {/* Fallback placeholder */}
