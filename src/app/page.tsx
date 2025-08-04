@@ -74,6 +74,26 @@ export default function Home() {
         <title>Vikram Singh Kainth | Developer Portfolio</title>
       </Head>
 
+      {/* --- Floating Contact Button --- */}
+      <motion.div
+        className="fixed bottom-6 right-6 z-50"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 1 }}
+      >
+        <motion.a
+          href="/#contact"
+          className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+          </svg>
+          <span className="hidden sm:inline font-semibold">Let&apos;s Talk</span>
+        </motion.a>
+      </motion.div>
+
       {/* --- Hero Section --- */}
       {/* Animated name and hero area */}
       <motion.div 
@@ -199,6 +219,8 @@ export default function Home() {
         </div>
       </div>
 
+
+
       {/* --- Featured Projects Showcase --- */}
       <section className="w-full py-16 bg-gradient-to-r from-indigo-100 to-purple-200 px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-indigo-700 mb-8 text-center">Featured Projects</h2>
@@ -241,30 +263,68 @@ export default function Home() {
       </section>
 
       {/* --- Latest Blog Excerpts --- */}
-      <section className="w-full py-16 bg-white px-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-purple-700 mb-8 text-center">Latest Blog Excerpts</h2>
-        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
-          {blogPosts.slice(0, 3).map((post, idx) => (
-            <motion.div
-              key={post.slug}
-              initial={{ opacity: 0, x: 50, scale: 0.95 }}
-              whileInView={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ 
-                duration: 0.8, 
-                delay: idx * 0.15, 
-                ease: [0.25, 0.46, 0.45, 0.94],
-                type: "spring",
-                stiffness: 100
-              }}
-              viewport={{ once: true, margin: "-50px" }}
-              className="bg-gradient-to-br from-indigo-50 to-purple-100 rounded-xl shadow p-6 flex flex-col gap-4 hover:shadow-lg transition-all duration-300 hover:scale-105"
+      <section className="w-full py-20 bg-gradient-to-br from-purple-50 to-indigo-50 px-4">
+        <div className="max-w-6xl mx-auto">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Latest Insights & Thoughts</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Sharing knowledge, experiences, and insights from my journey in Power Platform and modern web development.</p>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {blogPosts.slice(0, 3).map((post, idx) => (
+              <motion.div
+                key={post.slug}
+                initial={{ opacity: 0, x: 50, scale: 0.95 }}
+                whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: idx * 0.15, 
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                  type: "spring",
+                  stiffness: 100
+                }}
+                viewport={{ once: true, margin: "-50px" }}
+                className="bg-white rounded-xl shadow-lg p-8 flex flex-col gap-4 hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs text-gray-500 bg-gray-100 px-3 py-1 rounded-full">{post.date}</span>
+                  <span className="text-xs text-purple-600 font-medium">BLOG</span>
+                </div>
+                <span className="font-bold text-xl text-gray-900 leading-tight">{post.title}</span>
+                <p className="text-gray-700 text-sm flex-1 leading-relaxed">{post.excerpt}</p>
+                <a href={`/blog/${post.slug}`} className="mt-4 text-purple-700 hover:text-purple-800 font-semibold text-sm flex items-center gap-2 group">
+                  Read Full Article 
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </motion.div>
+            ))}
+          </div>
+          
+          <motion.div 
+            className="text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <a 
+              href="/blog" 
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
-              <span className="text-xs text-gray-500">{post.date}</span>
-              <span className="font-bold text-xl text-gray-900 leading-tight">{post.title}</span>
-              <p className="text-gray-700 text-sm flex-1">{post.excerpt}</p>
-              <a href={`/blog/${post.slug}`} className="mt-2 text-purple-700 hover:underline font-semibold text-sm">Read More →</a>
-            </motion.div>
-          ))}
+              View All Articles
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </motion.div>
         </div>
       </section>
 

@@ -293,12 +293,95 @@ export default function AboutPage() {
           </div>
         </motion.section>
 
+        {/* What I Solve Section */}
+        <motion.section 
+          className="mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 2.0 }}
+        >
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">What Problems Do I Solve?</h2>
+          <p className="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">I help businesses overcome common challenges through intelligent automation, data-driven insights, and modern web solutions.</p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: "⏰",
+                title: "Time-Consuming Manual Processes",
+                problem: "Employees spending hours on repetitive tasks",
+                solution: "Automate workflows with Power Automate, reducing manual work by 80%+",
+                benefit: "Free up time for strategic work"
+              },
+              {
+                icon: "📊",
+                title: "Poor Data Visibility",
+                problem: "Business decisions made without real-time insights",
+                solution: "Create interactive dashboards with Power BI and custom web apps",
+                benefit: "Make data-driven decisions faster"
+              },
+              {
+                icon: "🔄",
+                title: "Disconnected Systems",
+                problem: "Data scattered across multiple platforms",
+                solution: "Integrate systems using Power Platform and custom APIs",
+                benefit: "Single source of truth for all data"
+              },
+              {
+                icon: "📱",
+                title: "Outdated User Interfaces",
+                problem: "Poor user experience limiting adoption",
+                solution: "Build modern, responsive web applications with React",
+                benefit: "Increase user adoption and satisfaction"
+              },
+              {
+                icon: "🔒",
+                title: "Security & Compliance Issues",
+                problem: "Manual processes creating security risks",
+                solution: "Implement secure, compliant automation solutions",
+                benefit: "Reduce risk and ensure compliance"
+              },
+              {
+                icon: "💰",
+                title: "High Operational Costs",
+                problem: "Expensive manual processes and inefficiencies",
+                solution: "Optimize workflows and reduce operational overhead",
+                benefit: "Significant cost savings and ROI"
+              }
+            ].map((item, idx) => (
+              <motion.div
+                key={item.title}
+                className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-8 border border-indigo-100 hover:shadow-lg transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 2.2 + idx * 0.1 }}
+              >
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                <div className="space-y-3">
+                  <div>
+                    <span className="text-sm font-semibold text-red-600">Problem:</span>
+                    <p className="text-gray-700 text-sm">{item.problem}</p>
+                  </div>
+                  <div>
+                    <span className="text-sm font-semibold text-green-600">Solution:</span>
+                    <p className="text-gray-700 text-sm">{item.solution}</p>
+                  </div>
+                  <div>
+                    <span className="text-sm font-semibold text-blue-600">Benefit:</span>
+                    <p className="text-gray-700 text-sm">{item.benefit}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+
         {/* Call to Action */}
         <motion.section 
           className="text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 2.0 }}
+          transition={{ duration: 0.8, delay: 2.8 }}
         >
           <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-12 text-white">
             <h2 className="text-3xl font-bold mb-4">Ready to Work Together?</h2>
