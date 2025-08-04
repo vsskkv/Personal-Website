@@ -1,10 +1,10 @@
 name = "vikram-portfolio"
 compatibility_date = "2025-08-03"
 
+pages_build_output_dir = "./out"
+
 [build]
 command = "npm run build"
 
 [build.environment]
-NODE_VERSION = "18"
-
-pages_build_output_dir = ".next" 
+NODE_VERSION = "18" 
