@@ -90,7 +90,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.5 }}
           >
-            <Typewriter text="VIKRAM SINGH KAINTH" speed={120} />
+            <Typewriter text="VIKRAM SINGH KAINTH" speed={120} sound={true} />
           </motion.div>
           {/* Right curly brace animation */}
           <motion.div
@@ -117,7 +117,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ delay: 3.2, duration: 0.5 }}
             >
-              <Typewriter text="Power Platform Specialist" speed={40} />
+              <Typewriter text="Power Platform Specialist" speed={40} sound={true} />
             </motion.div>
             <motion.div
               className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-mono text-indigo-200 inline-flex items-center origin-right"
