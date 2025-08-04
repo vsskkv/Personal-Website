@@ -6,39 +6,53 @@ export default function AboutPage() {
   // Timeline data
   const timeline = [
     {
-      year: "2024",
+      year: "2025",
       title: "Senior Developer",
-      company: "Current Role",
-      description: "Leading Power Platform solutions and modern web development projects. Specializing in automation, data visualization, and enterprise applications.",
-      skills: ["Power Platform", "React", "TypeScript", "SharePoint"]
+      company: "Valcon",
+      description: "Leading the design and delivery of enterprise Power Platform solutions for major clients, transforming manual processes into seamless digital workflows. Architecting scalable Power Apps and automated workflows using Power Automate.",
+      skills: ["Power Apps", "Power Automate", "Power BI", "Dataverse", "Mentoring"]
     },
     {
-      year: "2023",
-      title: "Power Platform Developer",
-      company: "Previous Role",
-      description: "Built comprehensive automation solutions and data dashboards. Reduced manual processes by 80% for multiple clients.",
-      skills: ["Power Apps", "Power Automate", "Power BI", "Dataverse"]
+      year: "2023-2025",
+      title: "Consultant",
+      company: "Computacenter",
+      description: "Delivered tailored Power Platform solutions as a consultant across various business units, driving automation and data-led decision-making. Introduced workflow automations that reduced processing time by up to 70%.",
+      skills: ["Power Platform", "Power Apps", "Power Automate", "Dataverse", "Consulting"]
     },
     {
-      year: "2022",
-      title: "Full Stack Developer",
-      company: "Web Development",
-      description: "Developed modern web applications using React and Next.js. Created responsive, user-friendly interfaces for various industries.",
-      skills: ["React", "Next.js", "JavaScript", "CSS/HTML"]
+      year: "2022-2023",
+      title: "Implementation Specialist",
+      company: "Computacenter",
+      description: "Extensively cultivated competencies in Power Platform suite, designing and managing solutions to optimize business processes. Created intricate flows and Power BI dashboards for comprehensive process automation.",
+      skills: ["Power Platform", "Power Apps", "Power Automate", "Power BI", "Integration"]
     },
     {
-      year: "2021",
-      title: "Software Engineer",
-      company: "Early Career",
-      description: "Started journey in software development. Focused on building scalable solutions and learning modern development practices.",
-      skills: ["JavaScript", "Python", "Git", "Agile"]
+      year: "2021-2022",
+      title: "Technical Graduate",
+      company: "Computacenter",
+      description: "Strategy and Problem Management focus. Developed foundational skills in technical problem-solving and business process optimization.",
+      skills: ["Strategy", "Problem Management", "Technical Analysis", "Business Processes"]
     },
     {
-      year: "2020",
-      title: "Computer Science Graduate",
-      company: "Aston University",
-      description: "Completed degree with focus on algorithms, data structures, and software engineering principles.",
-      skills: ["Algorithms", "Data Structures", "Research", "Thesis"]
+      year: "2019-2020",
+      title: "Global Technical Innovation Specialist",
+      company: "Intel Corporation",
+      description: "Led full-stack web development projects and managed system programs. Developed data-driven dashboards using Power BI, translating complex data into actionable insights.",
+      skills: ["Web Development", "Power BI", "Data Analysis", "Hardware Integration"]
+    },
+    {
+      year: "2017-2018",
+      title: "Sales Associate",
+      company: "Maplin",
+      description: "Technical support and customer service with wide product knowledge. Generated formulated knowledge-packed responses to technical issues.",
+      skills: ["Technical Support", "Customer Service", "Product Knowledge", "Problem Solving"]
+    },
+    {
+      year: "2016",
+      title: "IT Technician",
+      company: "Minor, Weir and Willis Ltd",
+      description: "Programming in C++, Visual Basic and SQL. Built small programs to automate processes and provided technical support for hardware and software issues.",
+      skills: ["C++", "Visual Basic", "SQL", "Hardware Repair", "Process Automation"]
     }
   ];
 
@@ -127,14 +141,18 @@ export default function AboutPage() {
             Senior Developer & Power Platform Specialist
           </motion.h2>
           
-          <motion.p 
+                    <motion.p
             className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            I transform businesses through intelligent automation, data-driven insights, and modern web solutions. 
+            I transform businesses through intelligent automation, data-driven insights, and modern web solutions.
             With 5+ years of experience, I bridge the gap between complex technical challenges and practical business outcomes.
+            I hold a BSc in Computer Science from Aston University, where I studied software engineering, algorithms, 
+            data structures, and artificial intelligence. During my studies, I was actively involved as the Chess Society Treasurer 
+            and completed a Chinese for Beginners certificate, demonstrating my commitment to both technical excellence and 
+            continuous learning.
           </motion.p>
         </motion.div>
 
@@ -252,12 +270,94 @@ export default function AboutPage() {
           </div>
         </motion.section>
 
+        {/* Certifications Section */}
+        <motion.section 
+          className="mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.4 }}
+        >
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Licenses & Certifications</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Microsoft Certified: Power Platform Functional Consultant Associate",
+                issuer: "Microsoft",
+                issued: "Oct 2024",
+                expires: "Oct 2025",
+                credentialId: "A9A4EA4D832863C3",
+                status: "active",
+                skills: ["Power Platform", "Functional Consulting", "Solution Architecture"]
+              },
+              {
+                title: "Microsoft Certified: Power Platform App Maker Associate",
+                issuer: "Microsoft",
+                issued: "Jan 2024",
+                expires: "Jan 2026",
+                credentialId: "E057B5D05FC16EE",
+                status: "active",
+                skills: ["Power Apps", "Power Automate", "Dataverse"]
+              },
+              {
+                title: "Microsoft Certified: Power Platform Fundamentals",
+                issuer: "Microsoft",
+                issued: "Oct 2021",
+                expires: null,
+                credentialId: null,
+                status: "active",
+                skills: ["Power Platform", "Fundamentals", "Microsoft 365"]
+              }
+            ].map((cert, idx) => (
+              <motion.div
+                key={cert.title}
+                className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow border-l-4 border-blue-500"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.6 + idx * 0.2 }}
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 leading-tight">{cert.title}</h3>
+                    <p className="text-indigo-600 font-semibold text-sm">{cert.issuer}</p>
+                  </div>
+                  <div className="ml-4">
+                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                      cert.status === 'active' 
+                        ? 'bg-green-100 text-green-800' 
+                        : 'bg-gray-100 text-gray-800'
+                    }`}>
+                      {cert.status === 'active' ? 'Active' : 'Expired'}
+                    </span>
+                  </div>
+                </div>
+                
+                {cert.credentialId && (
+                  <div className="mb-4">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-600">Credential ID:</span>
+                      <span className="text-gray-900 font-mono text-xs">{cert.credentialId}</span>
+                    </div>
+                  </div>
+                )}
+                
+                <div className="flex flex-wrap gap-1">
+                  {cert.skills.map((skill, skillIdx) => (
+                    <span key={skillIdx} className="bg-blue-50 text-blue-700 px-2 py-1 rounded text-xs font-medium">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+
         {/* What I Do Section */}
         <motion.section 
           className="mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.6 }}
+          transition={{ duration: 0.8, delay: 1.8 }}
         >
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">What I Do</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -283,7 +383,7 @@ export default function AboutPage() {
                 className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 hover:scale-105"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.8 + idx * 0.2 }}
+                transition={{ duration: 0.6, delay: 2.0 + idx * 0.2 }}
               >
                 <div className="text-4xl mb-4">{service.icon}</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
@@ -298,7 +398,7 @@ export default function AboutPage() {
           className="mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 2.0 }}
+          transition={{ duration: 0.8, delay: 2.2 }}
         >
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">What Problems Do I Solve?</h2>
           <p className="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">I help businesses overcome common challenges through intelligent automation, data-driven insights, and modern web solutions.</p>
@@ -353,7 +453,7 @@ export default function AboutPage() {
                 className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-8 border border-indigo-100 hover:shadow-lg transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 2.2 + idx * 0.1 }}
+                transition={{ duration: 0.6, delay: 2.4 + idx * 0.1 }}
               >
                 <div className="text-4xl mb-4">{item.icon}</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
@@ -381,7 +481,7 @@ export default function AboutPage() {
           className="text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 2.8 }}
+          transition={{ duration: 0.8, delay: 3.0 }}
         >
           <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-12 text-white">
             <h2 className="text-3xl font-bold mb-4">Ready to Work Together?</h2>

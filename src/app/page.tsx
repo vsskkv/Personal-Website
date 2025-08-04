@@ -17,7 +17,15 @@ export default function Home() {
     "type Developer = {",
     "  name: 'Vikram Singh Kainth',",
     "  role: 'Senior Developer',",
-    "  skills: ['Power Platform', 'Next.js', 'TypeScript'],",
+    "  experience: '5+ years',",
+    "  skills: ['Power Platform', 'React', 'TypeScript', 'Next.js'],",
+    "  certifications: [",
+    "    'Power Platform Functional Consultant',",
+    "    'Power Platform App Maker',",
+    "    'Power Platform Fundamentals'",
+    "  ],",
+    "  focus: 'Business Automation & Web Development',",
+    "  education: 'BSc Computer Science - Aston University',",
     "};",
   ].join('\n');
 
@@ -170,8 +178,145 @@ export default function Home() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <div className="font-mono text-lg text-gray-800 bg-gray-100 p-6 rounded-lg">
-          <Typewriter text={aboutText} speed={40} cursor={true} />
+        <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+          <div className="mb-6">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Developer Profile</h3>
+            <div className="space-y-4">
+              <motion.div 
+                className="flex items-center gap-3"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                <div>
+                  <span className="text-gray-600 font-medium">Name:</span>
+                  <span className="text-gray-900 font-semibold ml-2">
+                    <Typewriter text="Vikram Singh Kainth" speed={50} />
+                  </span>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="flex items-center gap-3"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                <div>
+                  <span className="text-gray-600 font-medium">Role:</span>
+                  <span className="text-gray-900 font-semibold ml-2">
+                    <Typewriter text="Senior Developer" speed={50} />
+                  </span>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="flex items-center gap-3"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                <div>
+                  <span className="text-gray-600 font-medium">Experience:</span>
+                  <span className="text-gray-900 font-semibold ml-2">
+                    <Typewriter text="5+ years" speed={50} />
+                  </span>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="flex items-start gap-3"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-3 h-3 bg-orange-500 rounded-full mt-2"></div>
+                <div>
+                  <span className="text-gray-600 font-medium">Skills:</span>
+                  <div className="flex flex-wrap gap-2 mt-1">
+                    {['Power Platform', 'React', 'TypeScript', 'Next.js'].map((skill, idx) => (
+                      <motion.span 
+                        key={idx} 
+                        className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3, delay: 0.9 + idx * 0.1 }}
+                        viewport={{ once: true }}
+                      >
+                        {skill}
+                      </motion.span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="flex items-start gap-3"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 1.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-3 h-3 bg-red-500 rounded-full mt-2"></div>
+                <div>
+                  <span className="text-gray-600 font-medium">Certifications:</span>
+                  <div className="flex flex-wrap gap-2 mt-1">
+                    {['Power Platform Functional Consultant', 'Power Platform App Maker', 'Power Platform Fundamentals'].map((cert, idx) => (
+                      <motion.span 
+                        key={idx} 
+                        className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3, delay: 1.3 + idx * 0.1 }}
+                        viewport={{ once: true }}
+                      >
+                        {cert}
+                      </motion.span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="flex items-center gap-3"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 1.5 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <div>
+                  <span className="text-gray-600 font-medium">Focus:</span>
+                  <span className="text-gray-900 font-semibold ml-2">
+                    <Typewriter text="Business Automation & Web Development" speed={50} />
+                  </span>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="flex items-center gap-3"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 1.7 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
+                <div>
+                  <span className="text-gray-600 font-medium">Education:</span>
+                  <span className="text-gray-900 font-semibold ml-2">
+                    <Typewriter text="BSc Computer Science - Aston University" speed={50} />
+                  </span>
+                </div>
+              </motion.div>
+            </div>
+          </div>
         </div>
         {/* Profile image */}
         <motion.div 
