@@ -9,8 +9,6 @@ import { useState } from 'react';
 
 // --- Main Home Page Component ---
 export default function Home() {
-  const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [formMessage, setFormMessage] = useState('');
 
   // About section code snippet (displayed with typewriter effect)
   const aboutText = [
@@ -29,43 +27,7 @@ export default function Home() {
     "};",
   ].join('\n');
 
-  // Handle form submission
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setFormStatus('loading');
-    setFormMessage('');
 
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get('name') as string,
-      email: formData.get('email') as string,
-      message: formData.get('message') as string,
-    };
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        setFormStatus('success');
-        setFormMessage(result.message);
-        e.currentTarget.reset();
-      } else {
-        setFormStatus('error');
-        setFormMessage(result.error || 'Something went wrong. Please try again.');
-      }
-    } catch (error) {
-      setFormStatus('error');
-      setFormMessage('Network error. Please check your connection and try again.');
-    }
-  };
 
   // Framer Motion animation variants for hero section
 
@@ -541,52 +503,88 @@ export default function Home() {
           <div className="w-full max-w-3xl bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-2xl md:text-3xl font-bold text-indigo-700 mb-2 text-center">Contact Me</h2>
             <p className="text-gray-600 mb-8 text-center">Let’s work together! Reach out via the form below.</p>
-            {/* Status Message */}
-            {formMessage && (
-              <div className={`mb-4 p-4 rounded-md ${
-                formStatus === 'success' 
-                  ? 'bg-green-100 text-green-700 border border-green-200' 
-                  : 'bg-red-100 text-red-700 border border-red-200'
-              }`}>
-                {formMessage}
-              </div>
-            )}
+
             
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 placeholder-gray-500"
-                required
-                disabled={formStatus === 'loading'}
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 placeholder-gray-500"
-                required
-                disabled={formStatus === 'loading'}
-              />
+            <form action="https://formspree.io/f/xeozrore" method="POST" className="flex flex-col gap-6">
+              <input type="hidden" name="_redirect" value="https://vikramsinghkainth.com/#contact" />
+              <input type="hidden" name="_subject" value="New Contact Form Submission - Portfolio" />
+              {/* Name and Contact Type */}
+              <div className="grid md:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  className="border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 placeholder-gray-500"
+                  required
+                />
+                <select
+                  name="contactType"
+                  className="border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 bg-white"
+                  required
+                >
+                  <option value="">I'm reaching out as...</option>
+                  <option value="recruiter">Recruiter / Hiring Manager</option>
+                  <option value="industry">Industry Professional</option>
+                  <option value="client">Potential Client</option>
+                  <option value="collaboration">Collaboration Opportunity</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              {/* Company and Role (Optional) */}
+              <div className="grid md:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  name="company"
+                  placeholder="Company (Optional)"
+                  className="border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 placeholder-gray-500"
+                />
+                <input
+                  type="text"
+                  name="role"
+                  placeholder="Your Role (Optional)"
+                  className="border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 placeholder-gray-500"
+                />
+              </div>
+
+              {/* Project Type (for clients) */}
+              <div className="grid md:grid-cols-2 gap-4">
+                <select
+                  name="projectType"
+                  className="border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 bg-white"
+                >
+                  <option value="">Project Type (If applicable)</option>
+                  <option value="power-platform">Power Platform Development</option>
+                  <option value="web-development">Web Development</option>
+                  <option value="automation">Process Automation</option>
+                  <option value="consulting">Consulting</option>
+                  <option value="training">Training</option>
+                  <option value="other">Other</option>
+                </select>
+                <input
+                  type="text"
+                  name="timeline"
+                  placeholder="Timeline (Optional)"
+                  className="border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 placeholder-gray-500"
+                />
+              </div>
+
+              {/* Message */}
               <textarea
                 name="message"
-                placeholder="Your Message"
-                rows={5}
-                className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none text-gray-900 placeholder-gray-500"
+                placeholder="Tell me about your opportunity, project, or how I can help you..."
+                rows={6}
+                className="border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none text-gray-900 placeholder-gray-500"
                 required
-                disabled={formStatus === 'loading'}
               />
+
+
+
               <button
                 type="submit"
-                disabled={formStatus === 'loading'}
-                className={`mt-2 font-semibold py-2 rounded-md shadow-md transition-colors ${
-                  formStatus === 'loading'
-                    ? 'bg-gray-400 cursor-not-allowed'
-                    : 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700'
-                }`}
+                className="mt-4 font-semibold py-3 rounded-md shadow-md transition-colors bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700"
               >
-                {formStatus === 'loading' ? 'Sending...' : 'Send Message'}
+                Send Message
               </button>
             </form>
           </div>
