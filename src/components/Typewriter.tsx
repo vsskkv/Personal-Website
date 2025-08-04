@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 interface TypewriterProps {
   text: string;
@@ -17,12 +17,12 @@ export const Typewriter = ({ text, speed = 100, cursor = true, sound = false }: 
   // Initialize audio context for typewriter sound
   useEffect(() => {
     if (sound && typeof window !== 'undefined') {
-      audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+      audioContextRef.current = new (window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext)();
     }
   }, [sound]);
 
   // Play typewriter sound
-  const playTypewriterSound = () => {
+  const playTypewriterSound = useCallback(() => {
     if (!sound || !audioContextRef.current) return;
 
     try {
@@ -41,10 +41,10 @@ export const Typewriter = ({ text, speed = 100, cursor = true, sound = false }: 
 
       oscillator.start(audioContext.currentTime);
       oscillator.stop(audioContext.currentTime + 0.1);
-    } catch (error) {
+    } catch {
       console.log('Audio not supported or user interaction required');
     }
-  };
+  }, [sound]);
 
   // Typing animation effect
   useEffect(() => {
@@ -64,7 +64,7 @@ export const Typewriter = ({ text, speed = 100, cursor = true, sound = false }: 
       }
     }, speed);
     return () => clearInterval(interval);
-  }, [text, speed, sound]);
+  }, [text, speed, sound, playTypewriterSound]);
 
   // Blinking cursor effect
   useEffect(() => {

@@ -1,31 +1,17 @@
 "use client";
 import { motion } from 'framer-motion';
 import Head from 'next/head';
+import Link from 'next/link';
 import { Typewriter } from '@/components/Typewriter';
 import { powerIcons } from '@/lib/power-platform-icons';
 import { projects } from './projects/data';
 import { blogPosts } from './blog/data';
-import { useState } from 'react';
+
 
 // --- Main Home Page Component ---
 export default function Home() {
 
-  // About section code snippet (displayed with typewriter effect)
-  const aboutText = [
-    "type Developer = {",
-    "  name: 'Vikram Singh Kainth',",
-    "  role: 'Senior Developer',",
-    "  experience: '5+ years',",
-    "  skills: ['Power Platform', 'React', 'TypeScript', 'Next.js'],",
-    "  certifications: [",
-    "    'Power Platform Functional Consultant',",
-    "    'Power Platform App Maker',",
-    "    'Power Platform Fundamentals'",
-    "  ],",
-    "  focus: 'Business Automation & Web Development',",
-    "  education: 'BSc Computer Science - Aston University',",
-    "};",
-  ].join('\n');
+
 
 
 
@@ -571,15 +557,15 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            <a 
-              href="/blog" 
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-            >
-              View All Articles
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
+                         <Link
+               href="/blog"
+               className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+             >
+               View All Articles
+               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+               </svg>
+             </Link>
           </motion.div>
         </div>
       </section>
@@ -651,7 +637,7 @@ export default function Home() {
         <div className="w-full flex justify-center">
           <div className="w-full max-w-3xl bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-2xl md:text-3xl font-bold text-indigo-700 mb-2 text-center">Contact Me</h2>
-            <p className="text-gray-600 mb-8 text-center">Let’s work together! Reach out via the form below.</p>
+            <p className="text-gray-600 mb-8 text-center">Let&apos;s work together! Reach out via the form below.</p>
 
             
             <form action="https://formspree.io/f/xeozrore" method="POST" className="flex flex-col gap-6">
@@ -671,7 +657,7 @@ export default function Home() {
                   className="border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 bg-white"
                   required
                 >
-                  <option value="">I'm reaching out as...</option>
+                  <option value="">I&apos;m reaching out as...</option>
                   <option value="recruiter">Recruiter / Hiring Manager</option>
                   <option value="industry">Industry Professional</option>
                   <option value="client">Potential Client</option>
