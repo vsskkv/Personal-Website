@@ -275,22 +275,22 @@ export default function Home() {
           {/* Progress Bars */}
           <div className="flex flex-col gap-6">
             {[
-              {name:'Power Platform',val:95,colorClass:'bg-indigo-500'},
-              {name:'React',val:90,colorClass:'bg-blue-500'},
-              {name:'TypeScript',val:85,colorClass:'bg-purple-500'},
-              {name:'SharePoint',val:80,colorClass:'bg-emerald-500'},
-              {name:'Expo',val:75,colorClass:'bg-gray-800'}
+              {name:'Power Platform',projects:25,colorClass:'bg-indigo-500'},
+              {name:'React',projects:8,colorClass:'bg-blue-500'},
+              {name:'TypeScript',projects:6,colorClass:'bg-purple-500'},
+              {name:'SharePoint',projects:12,colorClass:'bg-emerald-500'},
+              {name:'Expo',projects:3,colorClass:'bg-gray-800'}
             ].map((skill, idx) => (
               <div key={skill.name}>
                 <div className="flex justify-between mb-1">
                   <span className="font-semibold text-gray-700">{skill.name}</span>
-                  <span className="text-xs text-gray-500">{skill.val}%</span>
+                  <span className="text-xs text-gray-500">{skill.projects}+ projects</span>
                 </div>
                 <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
                   <motion.div
                     className={`h-3 rounded-full ${skill.colorClass}`}
                     initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.val}%` }}
+                    whileInView={{ width: `${(skill.projects / 25) * 100}%` }}
                     transition={{ duration: 1, delay: idx * 0.15, ease: 'easeOut' }}
                     viewport={{ once: false }}
                   />
