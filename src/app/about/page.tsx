@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { motion } from 'framer-motion';
 import { BinaryBackground } from '@/components/BinaryBackground';
+import { FloatingBinary } from '@/components/FloatingBinary';
 
 export default function AboutPage() {
   // Timeline data
@@ -91,6 +92,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-purple-50 py-16 px-4 relative">
       <BinaryBackground intensity="low" speed="slow" />
+      <FloatingBinary intensity="low" speed="slow" color="text-gray-300" />
       <div className="max-w-6xl mx-auto relative z-10">
         
         {/* Hero Section */}

@@ -3,11 +3,13 @@ import Link from "next/link";
 import { projects } from "./data";
 import { motion } from "framer-motion";
 import { BinaryBackground } from '@/components/BinaryBackground';
+import { FloatingBinary } from '@/components/FloatingBinary';
 
 export default function ProjectsPage() {
   return (
     <main className="min-h-screen w-full bg-gradient-to-r from-indigo-50 to-purple-50 py-16 px-4 relative">
       <BinaryBackground intensity="low" speed="medium" />
+      <FloatingBinary intensity="low" speed="medium" color="text-indigo-200" />
       <div className="max-w-5xl mx-auto relative z-10">
         <h1 className="text-3xl md:text-5xl font-bold text-indigo-700 mb-8 text-center uppercase tracking-wider">Projects</h1>
         <p className="text-center text-gray-600 mb-12 text-lg">A showcase of my featured work across academic research and game development.</p>
