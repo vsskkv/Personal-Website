@@ -14,24 +14,42 @@ export const BinaryBackground = ({
   className = ''
 }: BinaryBackgroundProps) => {
   const [isClient, setIsClient] = useState(false);
+  const [particles, setParticles] = useState<Array<{
+    id: number;
+    left: number;
+    top: number;
+    duration: number;
+    delay: number;
+    value: string;
+  }>>([]);
 
   useEffect(() => {
     setIsClient(true);
-  }, []);
+    
+    // Generate particles only on client side
+    const particleCount = {
+      low: 8,
+      medium: 15,
+      high: 25
+    }[intensity];
 
-  // Configure based on intensity
-  const particleCount = {
-    low: 8,
-    medium: 15,
-    high: 25
-  }[intensity];
+    const animationSpeed = {
+      slow: { duration: 15, delay: 10 },
+      medium: { duration: 10, delay: 8 },
+      fast: { duration: 6, delay: 4 }
+    }[speed];
 
-  // Configure based on speed
-  const animationSpeed = {
-    slow: { duration: 15, delay: 10 },
-    medium: { duration: 10, delay: 8 },
-    fast: { duration: 6, delay: 4 }
-  }[speed];
+    const newParticles = Array.from({ length: particleCount }, (_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      duration: animationSpeed.duration + Math.random() * 4,
+      delay: Math.random() * animationSpeed.delay,
+      value: Math.random() > 0.5 ? '1' : '0'
+    }));
+
+    setParticles(newParticles);
+  }, [intensity, speed]);
 
   const opacity = {
     low: 'text-white/10',
@@ -46,13 +64,13 @@ export const BinaryBackground = ({
 
   return (
     <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
-      {[...Array(particleCount)].map((_, i) => (
+      {particles.map((particle) => (
         <motion.div
-          key={`binary-bg-${i}`}
+          key={`binary-bg-${particle.id}`}
           className={`absolute font-mono text-sm font-bold ${opacity}`}
           style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
+            left: `${particle.left}%`,
+            top: `${particle.top}%`,
           }}
           animate={{
             y: [0, -200, -400],
@@ -60,13 +78,13 @@ export const BinaryBackground = ({
             scale: [0.5, 1, 0.5],
           }}
           transition={{
-            duration: animationSpeed.duration + Math.random() * 4,
+            duration: particle.duration,
             repeat: Infinity,
-            delay: Math.random() * animationSpeed.delay,
+            delay: particle.delay,
             ease: "linear",
           }}
         >
-          {Math.random() > 0.5 ? '1' : '0'}
+          {particle.value}
         </motion.div>
       ))}
     </div>
