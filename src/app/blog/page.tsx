@@ -2,11 +2,13 @@
 import Link from "next/link";
 import { blogPosts } from "./data";
 import { motion } from "framer-motion";
+import { BinaryBackground } from '@/components/BinaryBackground';
 
 export default function BlogPage() {
   return (
-    <main className="min-h-screen w-full bg-gradient-to-r from-white to-purple-50 py-16 px-4">
-      <div className="max-w-5xl mx-auto">
+    <main className="min-h-screen w-full bg-gradient-to-r from-white to-purple-50 py-16 px-4 relative">
+      <BinaryBackground intensity="low" speed="medium" />
+      <div className="max-w-5xl mx-auto relative z-10">
         <h1 className="text-3xl md:text-5xl font-bold text-purple-700 mb-8 text-center uppercase tracking-wider">Blog</h1>
         <p className="text-center text-gray-600 mb-12 text-lg">Insights, tutorials, and stories from my journey in tech.</p>
         <div className="grid md:grid-cols-2 gap-8">
