@@ -323,8 +323,7 @@ export default function AboutPage() {
                 
                 {cert.credentialId && (
                   <div className="mb-4">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">Credential ID:</span>
+                    <div className="flex justify-end text-sm">
                       <span className="text-gray-900 font-mono text-xs">{cert.credentialId}</span>
                     </div>
                   </div>
