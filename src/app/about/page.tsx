@@ -41,20 +41,6 @@ export default function AboutPage() {
       company: "Intel Corporation",
       description: "Led full-stack web development projects and managed system programs. Developed data-driven dashboards using Power BI, translating complex data into actionable insights.",
       skills: ["Web Development", "Power BI", "Data Analysis", "Hardware Integration"]
-    },
-    {
-      year: "2017-2018",
-      title: "Sales Associate",
-      company: "Maplin",
-      description: "Technical support and customer service with wide product knowledge. Generated formulated knowledge-packed responses to technical issues.",
-      skills: ["Technical Support", "Customer Service", "Product Knowledge", "Problem Solving"]
-    },
-    {
-      year: "2016",
-      title: "IT Technician",
-      company: "Minor, Weir and Willis Ltd",
-      description: "Programming in C++, Visual Basic and SQL. Built small programs to automate processes and provided technical support for hardware and software issues.",
-      skills: ["C++", "Visual Basic", "SQL", "Hardware Repair", "Process Automation"]
     }
   ];
 
