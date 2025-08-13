@@ -275,7 +275,6 @@ export default function AboutPage() {
                 issuer: "Microsoft",
                 issued: "Oct 2024",
                 expires: "Oct 2025",
-                credentialId: "A9A4EA4D832863C3",
                 status: "active",
                 skills: ["Power Platform", "Functional Consulting", "Solution Architecture"]
               },
@@ -284,7 +283,6 @@ export default function AboutPage() {
                 issuer: "Microsoft",
                 issued: "Jan 2024",
                 expires: "Jan 2026",
-                credentialId: "E057B5D05FC16EE",
                 status: "active",
                 skills: ["Power Apps", "Power Automate", "Dataverse"]
               },
@@ -320,14 +318,7 @@ export default function AboutPage() {
                     </span>
                   </div>
                 </div>
-                
-                {cert.credentialId && (
-                  <div className="mb-4">
-                    <div className="flex justify-end text-sm">
-                      <span className="text-gray-900 font-mono text-xs">{cert.credentialId}</span>
-                    </div>
-                  </div>
-                )}
+              
                 
                 <div className="flex flex-wrap gap-1">
                   {cert.skills.map((skill, skillIdx) => (

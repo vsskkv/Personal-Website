@@ -322,9 +322,11 @@ export default function Home() {
 
 
       {/* --- Featured Projects Showcase --- */}
-      <section className="w-full py-16 bg-gradient-to-r from-indigo-100 to-purple-200 px-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-indigo-700 mb-8 text-center">Featured Projects</h2>
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+      <section className="w-full py-16 bg-gradient-to-r from-indigo-100 to-purple-200 px-4 relative overflow-hidden">
+        <BinaryBackground intensity="low" speed="slow" className="text-indigo-300" />
+        <FloatingBinary intensity="low" speed="slow" color="text-indigo-200" />
+        <h2 className="text-2xl md:text-3xl font-bold text-indigo-700 mb-8 text-center relative z-10">Featured Projects</h2>
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 relative z-10">
           {projects.map((project, idx) => (
             <motion.div
               key={project.slug}
@@ -363,7 +365,7 @@ export default function Home() {
       </section>
 
       {/* --- Latest Blog Excerpts --- */}
-      <section className="w-full py-20 bg-gradient-to-br from-purple-50 to-indigo-50 px-4 relative">
+      <section className="w-full py-20 bg-gradient-to-br from-purple-50 to-indigo-50 px-4 relative overflow-hidden">
         <BinaryBackground intensity="medium" speed="medium" className="text-purple-400" />
         <FloatingBinary intensity="medium" speed="medium" color="text-purple-300" />
         <div className="max-w-6xl mx-auto relative z-10">
@@ -431,7 +433,7 @@ export default function Home() {
       </section>
 
       {/* --- Skills Snapshot & Statistics --- */}
-      <section className="w-full py-16 bg-gradient-to-r from-purple-50 to-indigo-100 px-4 relative">
+      <section className="w-full py-16 bg-gradient-to-r from-purple-50 to-indigo-100 px-4 relative overflow-hidden">
         <BinaryBackground intensity="low" speed="slow" className="text-indigo-300" />
         <FloatingBinary intensity="low" speed="slow" color="text-indigo-200" />
         <h2 className="text-2xl md:text-3xl font-bold text-indigo-700 mb-8 text-center relative z-10">Skills Snapshot</h2>
@@ -495,8 +497,10 @@ export default function Home() {
       </section>
 
       {/* --- Contact Me Section --- */}
-      <section id="contact" className="w-full bg-gradient-to-r from-indigo-50 to-purple-50 py-24 px-0 flex justify-center items-center">
-        <div className="w-full flex justify-center">
+      <section id="contact" className="w-full bg-gradient-to-r from-indigo-50 to-purple-50 py-24 px-0 flex justify-center items-center relative overflow-hidden">
+        <BinaryBackground intensity="low" speed="slow" className="text-indigo-300" />
+        <FloatingBinary intensity="low" speed="slow" color="text-indigo-200" />
+        <div className="w-full flex justify-center relative z-10">
           <div className="w-full max-w-3xl bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-2xl md:text-3xl font-bold text-indigo-700 mb-2 text-center">Contact Me</h2>
             <p className="text-gray-600 mb-8 text-center">Let&apos;s work together! Reach out via the form below.</p>
@@ -589,8 +593,10 @@ export default function Home() {
       </section>
 
       {/* --- Footer --- */}
-      <footer className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-6 mt-0">
-        <div className="max-w-4xl mx-auto flex flex-col items-center justify-center gap-2 px-4">
+      <footer className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-6 mt-0 relative overflow-hidden">
+        <BinaryBackground intensity="medium" speed="slow" className="text-white opacity-20" />
+        <FloatingBinary intensity="medium" speed="slow" color="text-white opacity-30" />
+        <div className="max-w-4xl mx-auto flex flex-col items-center justify-center gap-2 px-4 relative z-10">
           <span className="font-semibold">© 2024 Vikram Singh Kainth</span>
           <span className="text-sm opacity-80">Built with Next.js & React</span>
         </div>

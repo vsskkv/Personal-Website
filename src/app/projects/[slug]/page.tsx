@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 import { projects } from "../data";
+import { BinaryBackground } from '@/components/BinaryBackground';
+import { FloatingBinary } from '@/components/FloatingBinary';
 
 // This tells Next.js which slugs to statically generate
 export function generateStaticParams() {
@@ -12,8 +14,10 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
   if (!project) return notFound();
 
   return (
-    <main className="min-h-screen w-full bg-gradient-to-r from-indigo-50 to-purple-50 py-16 px-4">
-      <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8">
+    <main className="min-h-screen w-full bg-gradient-to-r from-indigo-50 to-purple-50 py-16 px-4 relative overflow-hidden">
+      <BinaryBackground intensity="low" speed="slow" className="text-indigo-300" />
+      <FloatingBinary intensity="low" speed="slow" color="text-indigo-200" />
+      <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8 relative z-10">
         <h1 className="text-3xl md:text-5xl font-bold text-indigo-700 mb-4 uppercase tracking-wider">{project.title}</h1>
         <div className="flex flex-wrap gap-2 mb-6">
           {project.tech.map((tech, i) => (
