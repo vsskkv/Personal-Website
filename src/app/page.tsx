@@ -2,17 +2,38 @@
 import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useEffect } from 'react';
 import { Typewriter } from '@/components/Typewriter';
 import { BinaryBackground } from '@/components/BinaryBackground';
 import { HeroBackground } from '@/components/HeroBackground';
 import { FloatingBinary } from '@/components/FloatingBinary';
+import { SimpleAvatar } from '@/components/SimpleAvatar';
+import ErrorBoundary, { FormErrorBoundary } from '@/components/ErrorBoundary';
 import { powerIcons } from '@/lib/power-platform-icons';
 import { projects } from './projects/data';
 import { blogPosts } from './blog/data';
+import { analytics, useScrollTracking } from '@/lib/analytics';
 
 
 // --- Main Home Page Component ---
 export default function Home() {
+  // Set up scroll tracking
+  useEffect(() => {
+    const cleanup = useScrollTracking();
+    return cleanup;
+  }, []);
+
+  // Track time on page
+  useEffect(() => {
+    const startTime = Date.now();
+
+    return () => {
+      const timeSpent = Math.round((Date.now() - startTime) / 1000);
+      if (timeSpent > 10) { // Only track if user spent more than 10 seconds
+        analytics.trackTimeOnPage(timeSpent, 'home');
+      }
+    };
+  }, []);
 
 
 
@@ -42,6 +63,7 @@ export default function Home() {
       >
         <motion.a
           href="/#contact"
+          onClick={() => analytics.trackContactClick('floating_button')}
           className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-3 sm:p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -283,25 +305,15 @@ export default function Home() {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full overflow-hidden shadow-lg border-4 border-white">
-            <img
-              src="/images/avatar.png"
-              alt="Vikram Singh Kainth - Power Platform Specialist"
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                // Fallback to a placeholder if image fails to load
-                e.currentTarget.style.display = 'none';
-                const nextSibling = e.currentTarget.nextElementSibling as HTMLElement;
-                if (nextSibling) {
-                  nextSibling.style.display = 'block';
-                }
-              }}
-            />
-            {/* Fallback placeholder */}
-            <div className="w-full h-full bg-gradient-to-br from-indigo-400 to-purple-600 flex items-center justify-center text-white text-2xl sm:text-3xl md:text-4xl font-bold" style={{ display: 'none' }}>
-              VK
+          <ErrorBoundary>
+            <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full overflow-hidden shadow-lg border-4 border-white">
+              <SimpleAvatar
+                src="/images/avatar.png"
+                alt="Vikram Singh Kainth - Power Platform Specialist"
+                fallbackInitials="VK"
+              />
             </div>
-          </div>
+          </ErrorBoundary>
         </motion.div>
       </motion.div>
 
@@ -362,7 +374,13 @@ export default function Home() {
                   <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-mono">+{project.tech.length - 3} more</span>
                 )}
               </div>
-              <a href={`/projects/${project.slug}`} className="mt-2 text-indigo-600 hover:underline font-semibold text-sm">View Project →</a>
+              <a
+                href={`/projects/${project.slug}`}
+                onClick={() => analytics.trackProjectView(project.slug)}
+                className="mt-2 text-indigo-600 hover:underline font-semibold text-sm"
+              >
+                View Project →
+              </a>
             </motion.div>
           ))}
         </div>
@@ -406,7 +424,11 @@ export default function Home() {
                 </div>
                 <span className="font-bold text-xl text-gray-900 leading-tight">{post.title}</span>
                 <p className="text-gray-700 text-sm flex-1 leading-relaxed">{post.excerpt}</p>
-                <a href={`/blog/${post.slug}`} className="mt-4 text-purple-700 hover:text-purple-800 font-semibold text-sm flex items-center gap-2 group">
+                <a
+                  href={`/blog/${post.slug}`}
+                  onClick={() => analytics.trackBlogView(post.slug)}
+                  className="mt-4 text-purple-700 hover:text-purple-800 font-semibold text-sm flex items-center gap-2 group"
+                >
                   Read Full Article
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -510,87 +532,94 @@ export default function Home() {
             <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 text-center">Let&apos;s work together! Reach out via the form below.</p>
 
 
-            <form action="https://formspree.io/f/xeozrore" method="POST" className="flex flex-col gap-4 sm:gap-6">
-              <input type="hidden" name="_redirect" value="https://vikramsinghkainth.com/#contact" />
-              <input type="hidden" name="_subject" value="New Contact Form Submission - Portfolio" />
-
-              {/* Name and Contact Type */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
-                  required
-                />
-                <select
-                  name="contactType"
-                  className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 bg-white text-sm sm:text-base"
-                  required
-                >
-                  <option value="">I&apos;m reaching out as...</option>
-                  <option value="recruiter">Recruiter / Hiring Manager</option>
-                  <option value="industry">Industry Professional</option>
-                  <option value="client">Potential Client</option>
-                  <option value="collaboration">Collaboration Opportunity</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              {/* Company and Role (Optional) */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  name="company"
-                  placeholder="Company (Optional)"
-                  className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
-                />
-                <input
-                  type="text"
-                  name="role"
-                  placeholder="Your Role (Optional)"
-                  className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
-                />
-              </div>
-
-              {/* Project Type (for clients) */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <select
-                  name="projectType"
-                  className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 bg-white text-sm sm:text-base"
-                >
-                  <option value="">Project Type (If applicable)</option>
-                  <option value="power-platform">Power Platform Development</option>
-                  <option value="web-development">Web Development</option>
-                  <option value="automation">Process Automation</option>
-                  <option value="consulting">Consulting</option>
-                  <option value="training">Training</option>
-                  <option value="other">Other</option>
-                </select>
-                <input
-                  type="text"
-                  name="timeline"
-                  placeholder="Timeline (Optional)"
-                  className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
-                />
-              </div>
-
-              {/* Message */}
-              <textarea
-                name="message"
-                placeholder="Tell me about your opportunity, project, or how I can help you..."
-                rows={5}
-                className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none text-gray-900 placeholder-gray-500 text-sm sm:text-base"
-                required
-              />
-
-              <button
-                type="submit"
-                className="mt-2 sm:mt-4 font-semibold py-2 sm:py-3 rounded-md shadow-md transition-colors bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 text-sm sm:text-base"
+            <FormErrorBoundary>
+              <form
+                action="https://formspree.io/f/xeozrore"
+                method="POST"
+                className="flex flex-col gap-4 sm:gap-6"
+                onSubmit={() => analytics.trackFormSubmission('contact_form')}
               >
-                Send Message
-              </button>
-            </form>
+                <input type="hidden" name="_redirect" value="https://vikramsinghkainth.com/#contact" />
+                <input type="hidden" name="_subject" value="New Contact Form Submission - Portfolio" />
+
+                {/* Name and Contact Type */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
+                    required
+                  />
+                  <select
+                    name="contactType"
+                    className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 bg-white text-sm sm:text-base"
+                    required
+                  >
+                    <option value="">I&apos;m reaching out as...</option>
+                    <option value="recruiter">Recruiter / Hiring Manager</option>
+                    <option value="industry">Industry Professional</option>
+                    <option value="client">Potential Client</option>
+                    <option value="collaboration">Collaboration Opportunity</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                {/* Company and Role (Optional) */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="company"
+                    placeholder="Company (Optional)"
+                    className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
+                  />
+                  <input
+                    type="text"
+                    name="role"
+                    placeholder="Your Role (Optional)"
+                    className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
+                  />
+                </div>
+
+                {/* Project Type (for clients) */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <select
+                    name="projectType"
+                    className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 bg-white text-sm sm:text-base"
+                  >
+                    <option value="">Project Type (If applicable)</option>
+                    <option value="power-platform">Power Platform Development</option>
+                    <option value="web-development">Web Development</option>
+                    <option value="automation">Process Automation</option>
+                    <option value="consulting">Consulting</option>
+                    <option value="training">Training</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <input
+                    type="text"
+                    name="timeline"
+                    placeholder="Timeline (Optional)"
+                    className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
+                  />
+                </div>
+
+                {/* Message */}
+                <textarea
+                  name="message"
+                  placeholder="Tell me about your opportunity, project, or how I can help you..."
+                  rows={5}
+                  className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none text-gray-900 placeholder-gray-500 text-sm sm:text-base"
+                  required
+                />
+
+                <button
+                  type="submit"
+                  className="mt-2 sm:mt-4 font-semibold py-2 sm:py-3 rounded-md shadow-md transition-colors bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 text-sm sm:text-base"
+                >
+                  Send Message
+                </button>
+              </form>
+            </FormErrorBoundary>
           </div>
         </div>
       </section>
