@@ -29,7 +29,6 @@ A modern, responsive portfolio website showcasing expertise in Power Platform, R
 
 ### **Content Management**
 - **Blog System** - Built-in blog with RSS feed
-- **News Feed** - Power Platform news aggregation with web scraping
 - **Project Portfolio** - Detailed project descriptions and case studies
 - **Contact Form** - Functional contact form with email integration
 - **SEO Optimized** - Meta tags and structured data
@@ -66,11 +65,8 @@ my-portfolio/
 │   │   ├── projects/          # Projects showcase
 │   │   │   ├── [slug]/        # Individual project pages
 │   │   │   └── data.ts        # Project data
-│   │   ├── news/              # News page with web scraping
-│   │   │   └── page.tsx       # News page component
 │   │   ├── api/               # API routes
 │   │   │   ├── contact/       # Contact form API
-│   │   │   └── news/          # News scraping API
 │   │   ├── globals.css        # Global styles
 │   │   ├── layout.tsx         # Root layout
 │   │   └── page.tsx           # Home page
@@ -133,11 +129,7 @@ my-portfolio/
 2. Export a `blogPost` object with required fields
 3. Add to `src/app/blog/data.ts`
 
-### **News Feed Management**
-- **Automatic Scraping**: The news feed automatically scrapes Power Platform related content
-- **Manual Updates**: Run `node scripts/update-news.js` to test scraping
-- **API Endpoint**: `/api/news` provides the latest news data
-- **Sources**: Microsoft Power Platform Blog and Community forums
+
 
 ### **Updating Projects**
 1. Edit `src/app/projects/data.ts`
