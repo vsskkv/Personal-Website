@@ -20,7 +20,7 @@ export function OptimizedAvatar({
   const [isLoading, setIsLoading] = useState(true);
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+  const handleImageError = () => {
     console.log('Image failed to load:', src);
     setImageError(true);
     setIsLoading(false);

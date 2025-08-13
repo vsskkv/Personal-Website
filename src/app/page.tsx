@@ -12,15 +12,42 @@ import ErrorBoundary, { FormErrorBoundary } from '@/components/ErrorBoundary';
 import { powerIcons } from '@/lib/power-platform-icons';
 import { projects } from './projects/data';
 import { blogPosts } from './blog/data';
-import { analytics, useScrollTracking } from '@/lib/analytics';
+import { analytics } from '@/lib/analytics';
 
 
 // --- Main Home Page Component ---
 export default function Home() {
   // Set up scroll tracking
   useEffect(() => {
-    const cleanup = useScrollTracking();
-    return cleanup;
+    if (typeof window !== 'undefined') {
+      let maxScroll = 0;
+      const milestones = [25, 50, 75, 90, 100];
+      const tracked = new Set<number>();
+
+      const handleScroll = () => {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = Math.round((scrollTop / docHeight) * 100);
+
+        if (scrollPercent > maxScroll) {
+          maxScroll = scrollPercent;
+
+          // Track milestones
+          milestones.forEach(milestone => {
+            if (scrollPercent >= milestone && !tracked.has(milestone)) {
+              tracked.add(milestone);
+              analytics.trackScrollDepth(milestone);
+            }
+          });
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
   }, []);
 
   // Track time on page
