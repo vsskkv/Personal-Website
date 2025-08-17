@@ -4,7 +4,7 @@ import { useEffect, useRef, useCallback } from 'react';
 export const BinaryCursor = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
   const positionRef = useRef({ x: 0, y: 0 });
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | undefined>(undefined);
   const charIndexRef = useRef(0);
   
   const chars = ['v', 's', 'k'];
@@ -65,7 +65,7 @@ export const BinaryCursor = () => {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [handleMouseMove, handleMouseLeave, handleMouseEnter]);
+  }, [handleMouseMove, handleMouseLeave, handleMouseEnter, chars]);
 
   return (
     <div
