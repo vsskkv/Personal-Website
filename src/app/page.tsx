@@ -8,7 +8,7 @@ import { BinaryBackground } from '@/components/BinaryBackground';
 import { HeroBackground } from '@/components/HeroBackground';
 import { FloatingBinary } from '@/components/FloatingBinary';
 import { SimpleAvatar } from '@/components/SimpleAvatar';
-import { BinaryCursor } from '@/components/BinaryCursor';
+
 import ErrorBoundary, { FormErrorBoundary } from '@/components/ErrorBoundary';
 import { powerIcons } from '@/lib/power-platform-icons';
 import { projects } from './projects/data';
@@ -77,8 +77,7 @@ export default function Home() {
 
   return (
     <>
-      {/* --- Binary Cursor --- */}
-      <BinaryCursor />
+
 
       {/* --- SEO Head --- */}
       <Head>

@@ -4,6 +4,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { Analytics } from "@/components/Analytics";
+import { BinaryCursor } from "@/components/BinaryCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <BinaryCursor />
         <Analytics />
         <ErrorBoundary>
           <Navigation />
