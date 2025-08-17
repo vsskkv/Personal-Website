@@ -26,7 +26,7 @@ export default function Home() {
       const tracked = new Set<number>();
 
       const handleScroll = () => {
-        const scrollTop = window.pageYOffset;
+        const scrollTop = window.scrollY;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
         const scrollPercent = Math.round((scrollTop / docHeight) * 100);
 
@@ -90,14 +90,15 @@ export default function Home() {
         className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 1 }}
+        transition={{ duration: 0.3, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
         <motion.a
           href="/#contact"
           onClick={() => analytics.trackContactClick('floating_button')}
-          className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-3 sm:p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
+          className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-3 sm:p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-150 flex items-center gap-2"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ type: "spring", stiffness: 400, damping: 25 }}
         >
           <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -112,7 +113,7 @@ export default function Home() {
         className="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-600 to-purple-600 relative overflow-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
         viewport={{ once: true }}
       >
         {/* --- Background Animations --- */}
@@ -124,7 +125,7 @@ export default function Home() {
               className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-mono text-white inline-flex items-center origin-left"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
+              transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
               {'{'}
             </motion.div>
@@ -133,15 +134,15 @@ export default function Home() {
               className="inline-block text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-mono text-white uppercase tracking-wider text-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.5 }}
+              transition={{ delay: 0.3, duration: 0.3 }}
             >
-              <Typewriter text="VIKRAM SINGH KAINTH" speed={120} />
+              <Typewriter text="VIKRAM SINGH KAINTH" speed={80} />
             </motion.div>
             <motion.div
               className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-mono text-white inline-flex items-center origin-right"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
-              transition={{ delay: 2, duration: 0.8, ease: 'easeOut' }}
+              transition={{ delay: 0.8, duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
               {'}'}
             </motion.div>
@@ -153,7 +154,7 @@ export default function Home() {
               className="text-base sm:text-xl md:text-2xl lg:text-3xl font-mono text-indigo-200 inline-flex items-center origin-left"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
-              transition={{ delay: 2.8, duration: 0.6, ease: 'easeOut' }}
+              transition={{ delay: 1.0, duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
               {'{'}
             </motion.div>
@@ -161,15 +162,15 @@ export default function Home() {
               className="inline-block text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-mono text-indigo-100 text-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 3.2, duration: 0.5 }}
+              transition={{ delay: 1.2, duration: 0.3 }}
             >
-              <Typewriter text="Power Platform Specialist" speed={40} />
+              <Typewriter text="Power Platform Specialist" speed={60} />
             </motion.div>
             <motion.div
               className="text-base sm:text-xl md:text-2xl lg:text-3xl font-mono text-indigo-200 inline-flex items-center origin-right"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
-              transition={{ delay: 4, duration: 0.6, ease: 'easeOut' }}
+              transition={{ delay: 1.6, duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
               {'}'}
             </motion.div>
@@ -181,10 +182,10 @@ export default function Home() {
       {/* Animated code snippet about you */}
       <motion.div
         className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-start relative"
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
+        transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+        viewport={{ once: true, margin: "-100px" }}
       >
         <BinaryBackground intensity="low" speed="slow" className="text-gray-400" />
         <FloatingBinary intensity="low" speed="slow" color="text-gray-300" />
@@ -194,9 +195,9 @@ export default function Home() {
             <div className="space-y-4">
               <motion.div
                 className="flex items-center gap-3"
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -15 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
+                transition={{ duration: 0.3, delay: 0.05, ease: [0.25, 0.46, 0.45, 0.94] }}
                 viewport={{ once: true }}
               >
                 <div className="w-3 h-3 bg-green-500 rounded-full"></div>
@@ -210,9 +211,9 @@ export default function Home() {
 
               <motion.div
                 className="flex items-center gap-3"
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -15 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
+                transition={{ duration: 0.3, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
                 viewport={{ once: true }}
               >
                 <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
@@ -226,9 +227,9 @@ export default function Home() {
 
               <motion.div
                 className="flex items-center gap-3"
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -15 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
+                transition={{ duration: 0.3, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
                 viewport={{ once: true }}
               >
                 <div className="w-3 h-3 bg-purple-500 rounded-full"></div>

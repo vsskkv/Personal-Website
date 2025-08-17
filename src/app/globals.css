@@ -26,6 +26,29 @@ body {
   cursor: none; /* Hide default cursor */
 }
 
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+/* Optimize animations for better performance */
+.motion-safe {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* VSK cursor implementation */
 .vsk-cursor {
   position: fixed;
@@ -55,7 +78,6 @@ body {
     inset 0 0 8px rgba(255, 255, 255, 0.1);
   will-change: transform, opacity;
   backface-visibility: hidden;
-  transform: translate3d(-12px, -12px, 0);
   transition: opacity 0.2s ease;
   animation: cursorPulse 2s ease-in-out infinite;
 }
@@ -85,20 +107,22 @@ body {
 }
 
 .animate-scroll-x {
-  animation: scroll-x 18s linear infinite;
+  animation: scroll-x 12s linear infinite;
+  will-change: transform;
 }
 @keyframes scroll-x {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 
 @keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% { transform: translate3d(-100%, 0, 0); }
+  100% { transform: translate3d(100%, 0, 0); }
 }
 
 .animate-shimmer {
-  animation: shimmer 2s infinite;
+  animation: shimmer 1.5s infinite;
+  will-change: transform;
 }
 
 /* Line clamp utilities for text truncation */

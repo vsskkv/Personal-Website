@@ -11,7 +11,7 @@ export const BinaryCursor = () => {
 
   const updateCursorPosition = useCallback(() => {
     if (cursorRef.current) {
-      cursorRef.current.style.transform = `translate3d(${positionRef.current.x}px, ${positionRef.current.y}px, 0)`;
+      cursorRef.current.style.transform = `translate3d(${positionRef.current.x - 12}px, ${positionRef.current.y - 12}px, 0)`;
     }
   }, []);
 
@@ -73,7 +73,7 @@ export const BinaryCursor = () => {
       className="vsk-cursor"
       style={{
         opacity: 0,
-        transform: 'translate3d(0px, 0px, 0)',
+        transform: 'translate3d(-12px, -12px, 0)',
       }}
     >
       v
