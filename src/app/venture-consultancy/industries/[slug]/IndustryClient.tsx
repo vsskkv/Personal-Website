@@ -225,3 +225,4 @@ export default function IndustryClient({ industry }: { industry: Industry }) {
   );
 }
 
+
