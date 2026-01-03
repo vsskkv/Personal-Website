@@ -281,26 +281,80 @@ export default function HomeClient() {
             <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 text-center">Ready to automate your UK business? Reach out via the form below.</p>
             <FormErrorBoundary>
               <form action="https://formspree.io/f/xeozrore" method="POST" className="flex flex-col gap-4 sm:gap-6" onSubmit={() => analytics.trackFormSubmission('contact_form')}>
+                {/* Name and Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input type="text" name="name" placeholder="Your Name" className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 placeholder-gray-500 text-sm sm:text-base" required />
-                  <select name="contactType" className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 bg-white text-sm sm:text-base" required>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name *"
+                    className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
+                    required
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email Address *"
+                    className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
+                    required
+                  />
+                </div>
+
+                {/* Contact Type and Company */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <select
+                    name="contactType"
+                    className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 bg-white text-sm sm:text-base"
+                    required
+                  >
                     <option value="">I'm reaching out as...</option>
                     <option value="client">Potential Client</option>
                     <option value="recruiter">Recruiter / Hiring Manager</option>
                     <option value="other">Other</option>
                   </select>
+                  <input
+                    type="text"
+                    name="company"
+                    placeholder="Company (Optional)"
+                    className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
+                  />
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <select name="projectType" className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 bg-white text-sm sm:text-base">
-                    <option value="">Project Type</option>
+
+                {/* Project Type */}
+                <div>
+                  <select
+                    name="projectType"
+                    className="w-full border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 bg-white text-sm sm:text-base"
+                  >
+                    <option value="">What's your project type?</option>
                     <option value="power-platform">Power Platform / Automation</option>
                     <option value="consulting">General Consulting</option>
                     <option value="other">Other</option>
                   </select>
-                  <input type="text" name="company" placeholder="Company (Optional)" className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 placeholder-gray-500 text-sm sm:text-base" />
                 </div>
-                <textarea name="message" placeholder="Tell me about your Power Platform automation needs..." rows={5} className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none text-gray-900 placeholder-gray-500 text-sm sm:text-base" required />
-                <button type="submit" className="mt-2 sm:mt-4 font-semibold py-2 sm:py-3 rounded-md shadow-md transition-colors bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 text-sm sm:text-base">Send Message</button>
+
+                {/* Message */}
+                <textarea
+                  name="message"
+                  placeholder="What's taking the most time or causing frustration right now? *"
+                  rows={5}
+                  className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none text-gray-900 placeholder-gray-500 text-sm sm:text-base"
+                  required
+                />
+                <p className="text-xs text-gray-500 italic -mt-2">
+                  Examples: Approvals take too long • Onboarding is manual • SharePoint is messy
+                </p>
+
+                <div className="flex flex-col items-center gap-3">
+                  <button
+                    type="submit"
+                    className="w-full mt-2 sm:mt-4 font-bold py-3 sm:py-4 rounded-md shadow-md transition-all duration-300 bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 hover:scale-[1.02] text-sm sm:text-base"
+                  >
+                    Book My Free Audit
+                  </button>
+                  <p className="text-sm text-gray-500 font-medium">
+                    No spam. No follow-ups you didn't ask for.
+                  </p>
+                </div>
               </form>
             </FormErrorBoundary>
           </div>
