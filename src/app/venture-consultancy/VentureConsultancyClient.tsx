@@ -173,7 +173,7 @@ export default function VentureConsultancyClient() {
       <section className="relative z-10 py-16 px-4 sm:px-6 bg-white">
         <div className="max-w-6xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How I Help Small Businesses Automate Microsoft 365</h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">I solve business pains, not just "build apps". People buy relief from pain, not Power Automate. Here is how I help.</p>
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto">I solve business pains, not just &quot;build apps&quot;. People buy relief from pain, not Power Automate. Here is how I help.</p>
         </div>
         
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 mb-16">
@@ -237,7 +237,7 @@ export default function VentureConsultancyClient() {
             >
               <div className="text-4xl mb-4">{service.icon}</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-              <p className="text-indigo-600 font-bold mb-4 italic">"{service.outcome}"</p>
+              <p className="text-indigo-600 font-bold mb-4 italic">&quot;{service.outcome}&quot;</p>
               <p className="text-gray-600 text-sm mb-6 flex-grow">{service.seo}</p>
               <div className="pt-4 border-t border-gray-100">
                 <Link 
