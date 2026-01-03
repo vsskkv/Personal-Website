@@ -8,7 +8,7 @@ export default function ServicesClient() {
   const serviceCategories = [
     {
       name: "🧠 Core Automation Services",
-      description: "Directly eliminate manual work and free up your team&apos;s time.",
+      description: "Directly eliminate manual work and free up the time of your team.",
       services: [
         {
           id: "process-automation",
@@ -20,12 +20,12 @@ export default function ServicesClient() {
             "Chasing managers for approvals",
             "Manually copying data between systems",
             "Missing deadlines due to manual tracking",
-            "Employees wasting hours on &apos;copy-paste&apos; tasks"
+            "Employees wasting hours on 'copy-paste' tasks"
           ],
           details: [
             "Document approval workflows",
             "Request management systems",
-            "Email &amp; notification automation",
+            "Email & notification automation",
             "Form processing automation"
           ],
           result: "Faster approvals, fewer errors, and significantly less email traffic."
@@ -33,7 +33,7 @@ export default function ServicesClient() {
         {
           id: "onboarding-offboarding",
           icon: "👥",
-          title: "Onboarding &amp; Offboarding",
+          title: "Onboarding & Offboarding",
           badge: "Best for Growing Teams",
           outcome: "Ensure every new hire is set up perfectly and every exit is secure, without manual checklists.",
           problems: [
@@ -44,9 +44,9 @@ export default function ServicesClient() {
           ],
           details: [
             "Automated provisioning for M365",
-            "Equipment &amp; asset tracking",
+            "Equipment & asset tracking",
             "Document collection workflows",
-            "Secure exit &amp; access revocation"
+            "Secure exit & access revocation"
           ],
           result: "A professional first impression for staff and total security for your data."
         },
@@ -54,17 +54,17 @@ export default function ServicesClient() {
           id: "power-apps",
           icon: "📱",
           title: "Power Apps Development",
-          outcome: "Build custom business tools that solve specific operational headaches, without the &apos;big software&apos; price tag.",
+          outcome: "Build custom business tools that solve specific operational headaches, without the 'big software' price tag.",
           problems: [
             "Using paper forms or outdated Excel sheets",
-            "Processes that only work if you&apos;re in the office",
+            "Processes that only work if you are in the office",
             "Double-handling data across different platforms",
             "Needing a custom tool but lacking a developer"
           ],
           details: [
             "Mobile-friendly business apps",
-            "Inventory &amp; field service tools",
-            "Client portals &amp; request forms",
+            "Inventory & field service tools",
+            "Client portals & request forms",
             "Secure database (Dataverse) apps"
           ],
           result: "Custom tools that fit your business perfectly, accessible from any device."
@@ -79,17 +79,17 @@ export default function ServicesClient() {
           id: "licence-optimisation",
           icon: "📊",
           title: "Microsoft 365 Optimisation",
-          outcome: "Stop paying for 3rd party tools you don&apos;t need. Get maximum value from your existing licences.",
+          outcome: "Stop paying for 3rd party tools you do not need. Get maximum value from your existing licences.",
           problems: [
             "Paying for Zoom, Calendly, or Monday.com unnecessarily",
-            "Teams only being used for &apos;chat&apos; and nothing else",
-            "Unsure if you&apos;re on the right licence for your needs",
-            "User frustration with &apos;too many icons&apos; they don&apos;t use"
+            "Teams only being used for 'chat' and nothing else",
+            "Unsure if you are on the right licence for your needs",
+            "User frustration with 'too many icons' they do not use"
           ],
           details: [
-            "Licence usage &amp; cost analysis",
+            "Licence usage & cost analysis",
             "Feature implementation roadmap",
-            "User adoption &amp; training",
+            "User adoption & training",
             "ROI optimisation planning"
           ],
           result: "Lower software costs and a team that actually understands their tools."
@@ -98,17 +98,17 @@ export default function ServicesClient() {
           id: "sharepoint-cleanup",
           icon: "🗂️",
           title: "SharePoint Clean-Up",
-          outcome: "Turn a chaotic file system into an intuitive, searchable digital workspace that your team actually uses.",
+          outcome: "Turn a chaotic file system into an intuitive, searchable digital workspace that the team actually uses.",
           problems: [
-            "Can&apos;t find documents when you need them",
-            "Multiple &apos;Final&apos; versions of the same file",
+            "Cannot find documents when you need them",
+            "Multiple 'Final' versions of the same file",
             "Folders-within-folders-within-folders",
             "Sensitive data shared with the wrong people"
           ],
           details: [
-            "Site structure &amp; navigation redesign",
+            "Site structure & navigation redesign",
             "Document library organisation",
-            "Permission &amp; security review",
+            "Permission & security review",
             "Metadata (no more folders) setup"
           ],
           result: "A single source of truth for all company documents, secured and searchable."
@@ -116,11 +116,11 @@ export default function ServicesClient() {
         {
           id: "governance-security",
           icon: "🛡️",
-          title: "Governance &amp; CoE",
+          title: "Governance & CoE",
           badge: "Best for IT Leaders",
-          outcome: "Regain control over your digital environment and ensure your data isn&apos;t being leaked through rogue automations.",
+          outcome: "Regain control over your digital environment and ensure your data is not being leaked through rogue automations.",
           problems: [
-            "Uncontrolled growth of &apos;Citizen Developer&apos; apps",
+            "Uncontrolled growth of 'Citizen Developer' apps",
             "Data being shared outside the business by mistake",
             "Broken automations with no one to fix them",
             "No clear policy on who can build what"
@@ -129,14 +129,14 @@ export default function ServicesClient() {
             "Centre of Excellence (CoE) setup",
             "Data Loss Prevention (DLP) policies",
             "Environment security strategy",
-            "Monitoring &amp; audit reporting"
+            "Monitoring & audit reporting"
           ],
           result: "Total visibility and peace of mind over your Power Platform environment."
         }
       ]
     },
     {
-      name: "📊 Insight &amp; Partners",
+      name: "📊 Insight & Partners",
       description: "Data-driven decisions and specialist support for IT providers.",
       services: [
         {
@@ -151,7 +151,7 @@ export default function ServicesClient() {
             "Inconsistent data reporting across teams"
           ],
           details: [
-            "Executive &amp; operational dashboards",
+            "Executive & operational dashboards",
             "Real-time data visualisation",
             "Automated report delivery",
             "Cross-system data integration"
@@ -164,15 +164,15 @@ export default function ServicesClient() {
           title: "MSP Partner Support",
           outcome: "White-label Power Platform expertise for IT providers who need specialist skills for their own clients.",
           problems: [
-            "Clients asking for Power Apps you can&apos;t build",
+            "Clients asking for Power Apps you cannot build",
             "Lack of internal Power Platform expertise",
             "Turning down projects due to skill gaps",
-            "Governance questions you can&apos;t answer"
+            "Governance questions you cannot answer"
           ],
           details: [
             "Outsourced project delivery",
             "Technical troubleshooting support",
-            "Governance &amp; security consulting",
+            "Governance & security consulting",
             "White-label / Behind-the-scenes"
           ],
           result: "Retain your clients and unlock high-value projects without hiring full-time."
@@ -286,7 +286,7 @@ export default function ServicesClient() {
                   </div>
 
                   <div className="mb-6 flex-grow">
-                    <p className="font-bold text-gray-900 mb-3 text-sm uppercase tracking-wider">What&apos;s Included:</p>
+                    <p className="font-bold text-gray-900 mb-3 text-sm uppercase tracking-wider">What is Included:</p>
                     <ul className="space-y-2">
                       {service.details.map((detail, detailIdx) => (
                         <li key={detailIdx} className="flex items-start gap-2 text-gray-700 text-sm">
@@ -355,7 +355,7 @@ export default function ServicesClient() {
             {
               step: "2",
               title: "Clear Proposal",
-              description: "Fixed scope, clear pricing, and honest advice — even if the answer is &quot;don&apos;t do this yet&quot;."
+              description: "Fixed scope, clear pricing, and honest advice — even if the answer is &quot;do not do this yet&quot;."
             },
             {
               step: "3",
@@ -396,7 +396,7 @@ export default function ServicesClient() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            Ready to reclaim your team&apos;s time?
+            Ready to reclaim the time of your team?
           </motion.h2>
           <motion.p
             className="text-xl mb-10 opacity-90 leading-relaxed"
@@ -406,7 +406,7 @@ export default function ServicesClient() {
             viewport={{ once: true }}
           >
             Book a free 15-minute audit to discuss your specific challenges. 
-            I&apos;ll show you exactly how to get more value from the tools you already own.
+            I will show you exactly how to get more value from the tools you already own.
           </motion.p>
           <motion.div
             className="flex flex-col items-center gap-4"

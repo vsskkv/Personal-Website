@@ -50,9 +50,9 @@ export default function ContactClient() {
           <h2 className="text-2xl font-bold mb-6">What happens next?</h2>
           <ul className="space-y-4">
             {[
-              "I&apos;ll review your message personally (I work directly with clients, no hand-offs)",
-              "You&apos;ll hear back within 24–48 hours",
-              "If it makes sense, we&apos;ll book a free 15-minute call",
+              "I will review your message personally (I work directly with clients, no hand-offs)",
+              "You will hear back within 24–48 hours",
+              "If it makes sense, we will book a free 15-minute call",
               "No obligation to proceed with any paid work"
             ].map((step, idx) => (
               <li key={idx} className="flex items-start gap-3 text-indigo-100">
@@ -173,7 +173,7 @@ export default function ContactClient() {
               {/* Message */}
               <div>
                 <label htmlFor="message" className="block text-sm font-bold text-gray-700 mb-2">
-                  What&apos;s taking the most time or causing frustration right now? *
+                  What is taking the most time or causing frustration right now? *
                 </label>
                 <textarea
                   id="message"
@@ -181,10 +181,10 @@ export default function ContactClient() {
                   rows={6}
                   required
                   className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none text-gray-900 placeholder-gray-500"
-                  placeholder="Tell me about your current setup, or what challenges you&apos;re facing. (e.g. &apos;Approvals take too long&apos;, &apos;SharePoint is messy&apos;)"
+                  placeholder="Tell me about your current setup, or what challenges you are facing. (e.g. 'Approvals take too long', 'SharePoint is messy')"
                 />
                 <p className="mt-2 text-xs text-gray-500 italic">
-                  Examples: Approvals take too long • Onboarding is manual • SharePoint is messy • Unsure what we&apos;re paying for in M365
+                  Examples: Approvals take too long • Onboarding is manual • SharePoint is messy • Unsure what we are paying for in M365
                 </p>
               </div>
 
@@ -197,7 +197,7 @@ export default function ContactClient() {
                   Book My Free Audit
                 </button>
                 <p className="text-sm text-gray-500 font-medium">
-                  No spam. No follow-ups you didn&apos;t ask for.
+                  No spam. No follow-ups you did not ask for.
                 </p>
               </div>
             </form>

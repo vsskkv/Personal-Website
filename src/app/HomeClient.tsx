@@ -88,7 +88,7 @@ export default function HomeClient() {
           <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
           </svg>
-          <span className="hidden sm:inline font-semibold text-sm">Let&apos;s Talk</span>
+          <span className="hidden sm:inline font-semibold text-sm">Let us Talk</span>
         </motion.a>
       </motion.div>
 
@@ -306,7 +306,7 @@ export default function HomeClient() {
                     className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 bg-white text-sm sm:text-base"
                     required
                   >
-                    <option value="">I&apos;m reaching out as...</option>
+                    <option value="">I am reaching out as...</option>
                     <option value="client">Potential Client</option>
                     <option value="recruiter">Recruiter / Hiring Manager</option>
                     <option value="other">Other</option>
@@ -325,7 +325,7 @@ export default function HomeClient() {
                     name="projectType"
                     className="w-full border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900 bg-white text-sm sm:text-base"
                   >
-                    <option value="">What&apos;s your project type?</option>
+                    <option value="">What is your project type?</option>
                     <option value="power-platform">Power Platform / Automation</option>
                     <option value="consulting">General Consulting</option>
                     <option value="other">Other</option>
@@ -335,7 +335,7 @@ export default function HomeClient() {
                 {/* Message */}
                 <textarea
                   name="message"
-                  placeholder="What&apos;s taking the most time or causing frustration right now? *"
+                  placeholder="What is taking the most time or causing frustration right now? *"
                   rows={5}
                   className="border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none text-gray-900 placeholder-gray-500 text-sm sm:text-base"
                   required
@@ -352,7 +352,7 @@ export default function HomeClient() {
                     Book My Free Audit
                   </button>
                   <p className="text-sm text-gray-500 font-medium">
-                    No spam. No follow-ups you didn&apos;t ask for.
+                    No spam. No follow-ups you did not ask for.
                   </p>
                 </div>
               </form>

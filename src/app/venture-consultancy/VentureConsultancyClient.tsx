@@ -22,7 +22,7 @@ export default function VentureConsultancyClient() {
     },
     {
       question: "Is the health check really free?",
-      answer: "Yes. It&apos;s a no-obligation 15-minute call to identify quick wins and next steps for your Microsoft 365 setup."
+      answer: "Yes. It is a no-obligation 15-minute call to identify quick wins and next steps for your Microsoft 365 setup."
     }
   ];
 
@@ -59,7 +59,7 @@ export default function VentureConsultancyClient() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Power Platform &amp; Microsoft 365 Automation for <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">UK Small Businesses</span>
+              Power Platform & Microsoft 365 Automation for <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">UK Small Businesses</span>
             </motion.h1>
             <motion.p
               className="text-xl sm:text-2xl text-indigo-600 font-semibold mb-6"
@@ -75,7 +75,7 @@ export default function VentureConsultancyClient() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              You&apos;re already paying for Microsoft 365. I help you actually get value from it by eliminating manual admin and repetitive tasks that waste your team&apos;s time.
+              You are already paying for Microsoft 365. I help you actually get value from it by eliminating manual admin and repetitive tasks that waste the time of your team.
             </motion.p>
           </motion.div>
 
@@ -125,15 +125,15 @@ export default function VentureConsultancyClient() {
             <ul className="space-y-4 text-gray-700 text-lg">
               <li className="flex items-start gap-3">
                 <span className="text-green-500 mt-1 flex-shrink-0">•</span>
-                <span>You&apos;re a <strong>small business (5–100 staff)</strong> based in the UK.</span>
+                <span>You are a <strong>small business (5–100 staff)</strong> based in the UK.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-500 mt-1 flex-shrink-0">•</span>
-                <span>You already use <strong>Microsoft 365</strong> but feel you&apos;re only using 10% of its power.</span>
+                <span>You already use <strong>Microsoft 365</strong> but feel you are only using 10% of its power.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-500 mt-1 flex-shrink-0">•</span>
-                <span>Admin, approvals, and chasing paperwork waste hours of your team&apos;s week.</span>
+                <span>Admin, approvals, and chasing paperwork waste hours of the week of your team.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-500 mt-1 flex-shrink-0">•</span>
@@ -149,20 +149,20 @@ export default function VentureConsultancyClient() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-              <span className="text-red-500 text-3xl">×</span> This probably isn&apos;t for you if...
+              <span className="text-red-500 text-3xl">×</span> This probably is not for you if...
             </h2>
             <ul className="space-y-4 text-gray-700 text-lg opacity-80">
               <li className="flex items-start gap-3">
                 <span className="text-red-500 mt-1 flex-shrink-0">•</span>
-                <span>You don&apos;t use Microsoft 365 (Google Workspace / Other).</span>
+                <span>You do not use Microsoft 365 (Google Workspace / Other).</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-red-500 mt-1 flex-shrink-0">•</span>
-                <span>You&apos;re looking for a £99 quick fix for a complex problem.</span>
+                <span>You are looking for a £99 quick fix for a complex problem.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-red-500 mt-1 flex-shrink-0">•</span>
-                <span>You&apos;re looking for a generic IT support/helpdesk contract.</span>
+                <span>You are looking for a generic IT support/helpdesk contract.</span>
               </li>
             </ul>
           </motion.div>
@@ -173,7 +173,7 @@ export default function VentureConsultancyClient() {
       <section className="relative z-10 py-16 px-4 sm:px-6 bg-white">
         <div className="max-w-6xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How I Help Small Businesses Automate Microsoft 365</h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">I solve business pains, not just &quot;build apps&quot;. People buy relief from pain, not Power Automate. Here is how I help.</p>
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto">I solve business pains, not just "build apps". People buy relief from pain, not Power Automate. Here is how I help.</p>
         </div>
         
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 mb-16">
@@ -181,7 +181,7 @@ export default function VentureConsultancyClient() {
             {
               icon: "⚙️",
               title: "Power Automate Process Automation",
-              outcome: "Eliminate manual admin, approvals, and email chasing — saving your team hours every week.",
+              outcome: "Eliminate manual admin, approvals, and email chasing — saving the team hours every week.",
               seo: "I help UK small businesses automate approvals, document workflows, and repetitive admin using Microsoft Power Automate and SharePoint — reducing errors and saving hours each week.",
               tech: "Expert Power Automate & SharePoint Workflows",
               slug: "process-automation"
@@ -197,7 +197,7 @@ export default function VentureConsultancyClient() {
             {
               icon: "🏗️",
               title: "SharePoint Automation & Clean-Up",
-              outcome: "Turn a messy file system into an intuitive, searchable digital workspace that your team actually uses.",
+              outcome: "Turn a messy file system into an intuitive, searchable digital workspace that the team actually uses.",
               seo: "Transform chaotic SharePoint sites into structured, secure automation hubs. I help UK firms organise document libraries and implement metadata for faster file retrieval.",
               tech: "Using SharePoint & Teams",
               slug: "sharepoint-cleanup"
@@ -205,7 +205,7 @@ export default function VentureConsultancyClient() {
             {
               icon: "📊",
               title: "Microsoft 365 Licence Optimisation",
-              outcome: "Stop paying for 3rd party tools you don&apos;t need. I identify what can be built for free inside your current licence.",
+              outcome: "Stop paying for 3rd party tools you do not need. I identify what can be built for free inside your current licence.",
               seo: "Identify unnecessary software spend. Many UK businesses pay for Zoom or Trello when they already own equivalent tools within their existing Microsoft 365 subscription.",
               tech: "Licence & Feature Optimisation",
               slug: "licence-optimisation"
@@ -213,7 +213,7 @@ export default function VentureConsultancyClient() {
             {
               icon: "🛡️",
               title: "Power Platform Governance & Security",
-              outcome: "Identify who is building what and ensure your company data isn&apos;t being leaked through rogue automations.",
+              outcome: "Identify who is building what and ensure company data is not being leaked through rogue automations.",
               seo: "Secure your environment with proper Power Platform governance. I help IT leaders implement Centre of Excellence (CoE) policies to prevent data leaks and maintain control.",
               tech: "Centre of Excellence & Security Policies",
               slug: "governance-security"
@@ -237,7 +237,7 @@ export default function VentureConsultancyClient() {
             >
               <div className="text-4xl mb-4">{service.icon}</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-              <p className="text-indigo-600 font-bold mb-4 italic">&quot;{service.outcome}&quot;</p>
+              <p className="text-indigo-600 font-bold mb-4 italic">"{service.outcome}"</p>
               <p className="text-gray-600 text-sm mb-6 flex-grow">{service.seo}</p>
               <div className="pt-4 border-t border-gray-100">
                 <Link 
@@ -276,12 +276,12 @@ export default function VentureConsultancyClient() {
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">I prefer simple, practical solutions over enterprise fluff.</h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              I work with UK small businesses because they already pay for powerful tools — they&apos;re just not set up properly.              My background as a Senior Developer means I know the complex stuff, but I choose to build solutions that are 
+              I work with UK small businesses because they already pay for powerful tools — they are just not set up properly.              My background as a Senior Developer means I know the complex stuff, but I choose to build solutions that are 
               <strong> easy to use, documented, and maintainable.</strong>
             </p>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              I don&apos;t sell licences and I don&apos;t upsell software. My goal is to help you get maximum value from 
-              what you&apos;ve already invested in.
+              I do not sell licences and I do not upsell software. My goal is to help you get maximum value from 
+              what you have already invested in.
             </p>
             <div className="flex items-center gap-4 text-sm text-gray-600 font-semibold">
               <span className="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-full">5+ Years Experience</span>

@@ -20,6 +20,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+export function generateStaticParams() {
+  return industries.map((industry) => ({
+    slug: industry.slug,
+  }));
+}
+
 export default async function IndustryPage({ params }: Props) {
   const { slug } = await params;
   const industry = industries.find(i => i.slug === slug);

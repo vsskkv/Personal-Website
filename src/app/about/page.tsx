@@ -465,7 +465,7 @@ export default function AboutPage() {
         >
           <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-12 text-white">
             <h2 className="text-3xl font-bold mb-4">Ready to Work Together?</h2>
-            <p className="text-xl mb-8 opacity-90">Let&apos;s discuss how I can help bring your ideas to life.</p>
+            <p className="text-xl mb-8 opacity-90">Let us discuss how I can help bring your ideas to life.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link href="/#contact" className="bg-white text-indigo-600 font-bold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-shadow">

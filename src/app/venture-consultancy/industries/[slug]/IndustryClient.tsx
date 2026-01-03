@@ -177,7 +177,7 @@ export default function IndustryClient({ industry }: { industry: Industry }) {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            Reclaim your team&apos;s time.
+            Reclaim the time of your team.
           </motion.h2>
           <motion.p
             className="text-xl mb-10 opacity-90 leading-relaxed"
@@ -186,7 +186,7 @@ export default function IndustryClient({ industry }: { industry: Industry }) {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Book a free 15-minute consultation. I&apos;ll show you exactly how to automate your manual processes using the tools you already pay for.
+            Book a free 15-minute consultation. I will show you exactly how to automate your manual processes using the tools you already pay for.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
