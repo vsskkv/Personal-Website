@@ -18,7 +18,7 @@ export default function HealthCheckClient() {
     },
     {
       category: "Microsoft 365 Usage",
-      impact: "Discover if you're paying for tools you don't use and identify features that could replace expensive 3rd party software.",
+      impact: "Discover if you&apos;re paying for tools you don&apos;t use and identify features that could replace expensive 3rd party software.",
       items: [
         "Licence utilisation review",
         "Feature adoption assessment",
@@ -28,7 +28,7 @@ export default function HealthCheckClient() {
     },
     {
       category: "SharePoint & Document Management",
-      impact: "Assess if your digital workspace is helping or hindering your team's productivity and security.",
+      impact: "Assess if your digital workspace is helping or hindering your team&apos;s productivity and security.",
       items: [
         "Site structure evaluation",
         "Document organisation review",
@@ -100,7 +100,7 @@ export default function HealthCheckClient() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Free Microsoft 365 & Power Platform Health Check
+              Free Microsoft 365 &amp; Power Platform Health Check
             </motion.h1>
             <motion.p
               className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-4"
@@ -108,7 +108,7 @@ export default function HealthCheckClient() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Find out where you're wasting time, which processes can be automated, and how to get more value from the Microsoft 365 licences you already pay for.
+              Find out where you&apos;re wasting time, which processes can be automated, and how to get more value from the Microsoft 365 licences you already pay for.
             </motion.p>
             <motion.p
               className="text-lg text-indigo-600 font-semibold"
@@ -137,7 +137,7 @@ export default function HealthCheckClient() {
             <ul className="space-y-4 text-gray-700 text-lg">
               <li className="flex items-start gap-3">
                 <span className="text-green-500 mt-1 flex-shrink-0">•</span>
-                <span>You're a <strong>small or medium business (5–150 staff)</strong> based in the UK.</span>
+                <span>You&apos;re a <strong>small or medium business (5–150 staff)</strong> based in the UK.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-500 mt-1 flex-shrink-0">•</span>
@@ -149,7 +149,7 @@ export default function HealthCheckClient() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-500 mt-1 flex-shrink-0">•</span>
-                <span>You suspect you're not using everything you already pay for.</span>
+                <span>You suspect you&apos;re not using everything you already pay for.</span>
               </li>
             </ul>
           </motion.div>
@@ -161,16 +161,16 @@ export default function HealthCheckClient() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-              <span className="text-red-500 text-3xl">×</span> This probably isn't for you if:
+              <span className="text-red-500 text-3xl">×</span> This probably isn&apos;t for you if:
             </h2>
             <ul className="space-y-4 text-gray-700 text-lg opacity-80">
               <li className="flex items-start gap-3">
                 <span className="text-red-500 mt-1 flex-shrink-0">•</span>
-                <span>You don't use Microsoft 365.</span>
+                <span>You don&apos;t use Microsoft 365.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-red-500 mt-1 flex-shrink-0">•</span>
-                <span>You're looking for a generic IT support or helpdesk contract.</span>
+                <span>You&apos;re looking for a generic IT support or helpdesk contract.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-red-500 mt-1 flex-shrink-0">•</span>
@@ -191,7 +191,7 @@ export default function HealthCheckClient() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            What's Included in Your Health Check
+            What&apos;s Included in Your Health Check
           </motion.h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
@@ -238,7 +238,7 @@ export default function HealthCheckClient() {
               "Approval processes taking days that could take minutes",
               "Onboarding tracked in spreadsheets instead of workflows",
               "Licences paid for but never used by any staff",
-              "SharePoint sites people actively avoid because they're messy",
+              "SharePoint sites people actively avoid because they&apos;re messy",
               "Manual monthly reporting that could be automated in Power BI",
               "Data security risks from uncontrolled automation"
             ].map((example, idx) => (
@@ -271,9 +271,9 @@ export default function HealthCheckClient() {
           </motion.h2>
           <div className="grid gap-6">
             {[
-              { icon: "✗", title: "No licence upselling", text: "I don't make money from selling you software." },
+              { icon: "✗", title: "No licence upselling", text: "I don&apos;t make money from selling you software." },
               { icon: "✗", title: "No pressure to buy anything", text: "This is a standalone value call, not a sales pitch." },
-              { icon: "✗", title: "No long reports you won't read", text: "I provide practical, immediate advice you can actually use." }
+              { icon: "✗", title: "No long reports you won&apos;t read", text: "I provide practical, immediate advice you can actually use." }
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -318,12 +318,12 @@ export default function HealthCheckClient() {
               {
                 step: "2",
                 title: "Quick Discussion",
-                description: "I'll ask about your current setup, pain points, and what you'd like to achieve."
+                description: "I&apos;ll ask about your current setup, pain points, and what you&apos;d like to achieve."
               },
               {
                 step: "3",
                 title: "Review & Recommendations",
-                description: "I'll give you clear, practical recommendations during the call — focusing on what's realistic and worth doing."
+                description: "I&apos;ll give you clear, practical recommendations during the call — focusing on what&apos;s realistic and worth doing."
               },
               {
                 step: "4",
@@ -360,7 +360,7 @@ export default function HealthCheckClient() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            After the call, you'll leave with:
+            After the call, you&apos;ll leave with:
           </motion.h2>
 
           <motion.div
@@ -373,7 +373,7 @@ export default function HealthCheckClient() {
             <ul className="space-y-4">
               {[
                 "3–5 clear automation or improvement opportunities",
-                "An understanding of what's worth fixing now vs later",
+                "An understanding of what&apos;s worth fixing now vs later",
                 "Clarity on whether Power Platform is the right fit for your business",
                 "Optional next steps (only if you want them)",
                 "Immediate feedback on your current M365 usage",
@@ -455,4 +455,3 @@ export default function HealthCheckClient() {
     </main>
   );
 }
-

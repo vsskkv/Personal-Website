@@ -7,8 +7,6 @@ export const BinaryCursor = () => {
   const animationRef = useRef<number | undefined>(undefined);
   const charIndexRef = useRef(0);
   
-  const chars = ['v', 's', 'k'];
-
   const updateCursorPosition = useCallback(() => {
     if (cursorRef.current) {
       cursorRef.current.style.transform = `translate3d(${positionRef.current.x - 12}px, ${positionRef.current.y - 12}px, 0)`;
@@ -42,6 +40,7 @@ export const BinaryCursor = () => {
   }, []);
 
   useEffect(() => {
+    const chars = ['v', 's', 'k'];
     // Cycle through characters
     const charInterval = setInterval(() => {
       charIndexRef.current = (charIndexRef.current + 1) % chars.length;
@@ -65,7 +64,7 @@ export const BinaryCursor = () => {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [handleMouseMove, handleMouseLeave, handleMouseEnter, chars]);
+  }, [handleMouseMove, handleMouseLeave, handleMouseEnter]);
 
   return (
     <div

@@ -351,4 +351,3 @@ export const industries: Industry[] = [
     ctaText: "Get an SME Automation Audit"
   }
 ];
-

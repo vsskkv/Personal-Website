@@ -22,7 +22,7 @@ export default function VentureConsultancyClient() {
     },
     {
       question: "Is the health check really free?",
-      answer: "Yes. It's a no-obligation 15-minute call to identify quick wins and next steps for your Microsoft 365 setup."
+      answer: "Yes. It&apos;s a no-obligation 15-minute call to identify quick wins and next steps for your Microsoft 365 setup."
     }
   ];
 
@@ -59,7 +59,7 @@ export default function VentureConsultancyClient() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Power Platform & Microsoft 365 Automation for <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">UK Small Businesses</span>
+              Power Platform &amp; Microsoft 365 Automation for <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">UK Small Businesses</span>
             </motion.h1>
             <motion.p
               className="text-xl sm:text-2xl text-indigo-600 font-semibold mb-6"
@@ -75,7 +75,7 @@ export default function VentureConsultancyClient() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              You're already paying for Microsoft 365. I help you actually get value from it by eliminating manual admin and repetitive tasks that waste your team's time.
+              You&apos;re already paying for Microsoft 365. I help you actually get value from it by eliminating manual admin and repetitive tasks that waste your team&apos;s time.
             </motion.p>
           </motion.div>
 
@@ -125,15 +125,15 @@ export default function VentureConsultancyClient() {
             <ul className="space-y-4 text-gray-700 text-lg">
               <li className="flex items-start gap-3">
                 <span className="text-green-500 mt-1 flex-shrink-0">•</span>
-                <span>You're a <strong>small business (5–100 staff)</strong> based in the UK.</span>
+                <span>You&apos;re a <strong>small business (5–100 staff)</strong> based in the UK.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-500 mt-1 flex-shrink-0">•</span>
-                <span>You already use <strong>Microsoft 365</strong> but feel you're only using 10% of its power.</span>
+                <span>You already use <strong>Microsoft 365</strong> but feel you&apos;re only using 10% of its power.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-500 mt-1 flex-shrink-0">•</span>
-                <span>Admin, approvals, and chasing paperwork waste hours of your team's week.</span>
+                <span>Admin, approvals, and chasing paperwork waste hours of your team&apos;s week.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-500 mt-1 flex-shrink-0">•</span>
@@ -149,20 +149,20 @@ export default function VentureConsultancyClient() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-              <span className="text-red-500 text-3xl">×</span> This probably isn't for you if...
+              <span className="text-red-500 text-3xl">×</span> This probably isn&apos;t for you if...
             </h2>
             <ul className="space-y-4 text-gray-700 text-lg opacity-80">
               <li className="flex items-start gap-3">
                 <span className="text-red-500 mt-1 flex-shrink-0">•</span>
-                <span>You don't use Microsoft 365 (Google Workspace / Other).</span>
+                <span>You don&apos;t use Microsoft 365 (Google Workspace / Other).</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-red-500 mt-1 flex-shrink-0">•</span>
-                <span>You're looking for a £99 quick fix for a complex problem.</span>
+                <span>You&apos;re looking for a £99 quick fix for a complex problem.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-red-500 mt-1 flex-shrink-0">•</span>
-                <span>You're looking for a generic IT support/helpdesk contract.</span>
+                <span>You&apos;re looking for a generic IT support/helpdesk contract.</span>
               </li>
             </ul>
           </motion.div>
@@ -205,7 +205,7 @@ export default function VentureConsultancyClient() {
             {
               icon: "📊",
               title: "Microsoft 365 Licence Optimisation",
-              outcome: "Stop paying for 3rd party tools you don't need. I identify what can be built for free inside your current licence.",
+              outcome: "Stop paying for 3rd party tools you don&apos;t need. I identify what can be built for free inside your current licence.",
               seo: "Identify unnecessary software spend. Many UK businesses pay for Zoom or Trello when they already own equivalent tools within their existing Microsoft 365 subscription.",
               tech: "Licence & Feature Optimisation",
               slug: "licence-optimisation"
@@ -213,7 +213,7 @@ export default function VentureConsultancyClient() {
             {
               icon: "🛡️",
               title: "Power Platform Governance & Security",
-              outcome: "Identify who is building what and ensure your company data isn't being leaked through rogue automations.",
+              outcome: "Identify who is building what and ensure your company data isn&apos;t being leaked through rogue automations.",
               seo: "Secure your environment with proper Power Platform governance. I help IT leaders implement Centre of Excellence (CoE) policies to prevent data leaks and maintain control.",
               tech: "Centre of Excellence & Security Policies",
               slug: "governance-security"
@@ -276,12 +276,12 @@ export default function VentureConsultancyClient() {
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">I prefer simple, practical solutions over enterprise fluff.</h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              I work with UK small businesses because they already pay for powerful tools — they're just not set up properly.              My background as a Senior Developer means I know the complex stuff, but I choose to build solutions that are 
+              I work with UK small businesses because they already pay for powerful tools — they&apos;re just not set up properly.              My background as a Senior Developer means I know the complex stuff, but I choose to build solutions that are 
               <strong> easy to use, documented, and maintainable.</strong>
             </p>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              I don't sell licences and I don't upsell software. My goal is to help you get maximum value from 
-              what you've already invested in.
+              I don&apos;t sell licences and I don&apos;t upsell software. My goal is to help you get maximum value from 
+              what you&apos;ve already invested in.
             </p>
             <div className="flex items-center gap-4 text-sm text-gray-600 font-semibold">
               <span className="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-full">5+ Years Experience</span>
@@ -504,7 +504,7 @@ export default function VentureConsultancyClient() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           <div>
             <img src="/Venture Consultancy logo RB.png" alt="Venture Consultancy Logo" className="h-10 w-auto mb-4" />
-            <p className="text-gray-500 font-medium">Practical Microsoft 365 & Power Platform automation for UK businesses.</p>
+            <p className="text-gray-500 font-medium">Practical Microsoft 365 &amp; Power Platform automation for UK businesses.</p>
           </div>
           <div className="flex gap-8">
             <Link href="/venture-consultancy/services" className="text-gray-600 hover:text-indigo-600 font-medium">Services</Link>
