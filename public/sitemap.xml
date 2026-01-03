@@ -3,15 +3,33 @@
   <!-- Homepage -->
   <url>
     <loc>https://vikramsinghkainth.com/</loc>
-    <lastmod>2025-01-26</lastmod>
+    <lastmod>2026-01-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   
-  <!-- About page -->
+  <!-- Venture Consultancy -->
   <url>
-    <loc>https://vikramsinghkainth.com/about/</loc>
-    <lastmod>2025-01-26</lastmod>
+    <loc>https://vikramsinghkainth.com/venture-consultancy/</loc>
+    <lastmod>2026-01-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vikramsinghkainth.com/venture-consultancy/services/</loc>
+    <lastmod>2026-01-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vikramsinghkainth.com/venture-consultancy/health-check/</loc>
+    <lastmod>2026-01-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vikramsinghkainth.com/venture-consultancy/contact/</loc>
+    <lastmod>2026-01-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -19,7 +37,7 @@
   <!-- Projects page -->
   <url>
     <loc>https://vikramsinghkainth.com/projects/</loc>
-    <lastmod>2025-01-26</lastmod>
+    <lastmod>2026-01-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -27,14 +45,14 @@
   <!-- Individual project pages -->
   <url>
     <loc>https://vikramsinghkainth.com/projects/robotic-evolution/</loc>
-    <lastmod>2025-01-26</lastmod>
+    <lastmod>2026-01-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://vikramsinghkainth.com/projects/fractured-knight/</loc>
-    <lastmod>2025-01-26</lastmod>
+    <lastmod>2026-01-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -42,7 +60,7 @@
   <!-- Blog page -->
   <url>
     <loc>https://vikramsinghkainth.com/blog/</loc>
-    <lastmod>2025-01-26</lastmod>
+    <lastmod>2026-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -57,14 +75,14 @@
   
   <url>
     <loc>https://vikramsinghkainth.com/blog/presentation-prep/</loc>
-    <lastmod>2025-01-26</lastmod>
+    <lastmod>2026-01-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://vikramsinghkainth.com/blog/website-development/</loc>
-    <lastmod>2025-01-26</lastmod>
+    <lastmod>2026-01-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

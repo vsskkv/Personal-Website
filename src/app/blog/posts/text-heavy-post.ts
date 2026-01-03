@@ -41,7 +41,7 @@ export const blogPost = {
     
     { type: "heading", level: 2, text: "Conclusion" },
     
-    { type: "paragraph", text: "Writing great technical content is a skill that takes time to develop. The key is to focus on your audience, tell compelling stories, prioritize clarity, structure your content well, and provide practical examples." },
+    { type: "paragraph", text: "Writing great technical content is a skill that takes time to develop. The key is to focus on your audience, tell compelling stories, prioritise clarity, structure your content well, and provide practical examples." },
     
     { type: "paragraph", text: "Remember that your goal is not just to inform, but to inspire and empower your readers. When you achieve that, you've truly mastered the art of technical writing." }
   ]

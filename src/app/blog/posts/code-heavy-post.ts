@@ -39,9 +39,9 @@ export const blogPost = {
     
     { type: "code", language: "js", code: "// Form validation\nSet(\n    varFormErrors,\n    With(\n        {\n            email: txtEmail.Text,\n            phone: txtPhone.Text,\n            name: txtName.Text\n        },\n        If(\n            !varValidators.required(name),\n            \"Name is required\",\n            If(\n                !varValidators.email(email),\n                \"Please enter a valid email address\",\n                If(\n                    !varValidators.phone(phone),\n                    \"Please enter a valid phone number\",\n                    \"\"\n                )\n            )\n        )\n    )\n);" },
     
-    { type: "heading", level: 2, text: "4. Performance Optimization" },
+    { type: "heading", level: 2, text: "4. Performance Optimisation" },
     
-    { type: "paragraph", text: "Optimize your app for better performance:" },
+    { type: "paragraph", text: "Optimise your app for better performance:" },
     
     { type: "code", language: "js", code: "// Lazy loading pattern\nSet(\n    varLoadMoreData,\n    With(\n        {\n            currentCount: CountRows(varDataCollection),\n            pageSize: 50\n        },\n        Collect(\n            varDataCollection,\n            FirstN(\n                Skip(\n                    Filter(MyDataSource, Status = 'Active'),\n                    currentCount\n                ),\n                pageSize\n            )\n        )\n    )\n);" },
     
@@ -63,6 +63,6 @@ export const blogPost = {
     
     { type: "paragraph", text: "These patterns will help you build more robust, performant, and maintainable Power Apps. Remember to always test thoroughly and consider your users' needs when implementing these patterns." },
     
-    { type: "code", language: "js", code: "// Final thought: Always prioritize user experience\nSet(\n    varSuccess,\n    With(\n        {\n            appPerformance: varAppLoadTime < 3000,\n            userSatisfaction: varUserRating > 4.5\n        },\n        And(appPerformance, userSatisfaction)\n    )\n);" }
+    { type: "code", language: "js", code: "// Final thought: Always prioritise user experience\nSet(\n    varSuccess,\n    With(\n        {\n            appPerformance: varAppLoadTime < 3000,\n            userSatisfaction: varUserRating > 4.5\n        },\n        And(appPerformance, userSatisfaction)\n    )\n);" }
   ]
 }; 

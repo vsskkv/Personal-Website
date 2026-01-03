@@ -25,21 +25,21 @@ export default function AboutPage() {
       year: "2022-2023",
       title: "Implementation Specialist",
       company: "Computacenter",
-      description: "Extensively cultivated competencies in Power Platform suite, designing and managing solutions to optimize business processes. Created intricate flows and Power BI dashboards for comprehensive process automation.",
+      description: "Extensively cultivated competencies in Power Platform suite, designing and managing solutions to optimise business processes. Created intricate flows and Power BI dashboards for comprehensive process automation.",
       skills: ["Power Platform", "Power Apps", "Power Automate", "Power BI", "Integration"]
     },
     {
       year: "2021-2022",
       title: "Technical Graduate",
       company: "Computacenter",
-      description: "Strategy and Problem Management focus. Developed foundational skills in technical problem-solving and business process optimization.",
+      description: "Strategy and Problem Management focus. Developed foundational skills in technical problem-solving and business process optimisation.",
       skills: ["Strategy", "Problem Management", "Technical Analysis", "Business Processes"]
     },
     {
       year: "2019-2020",
       title: "Global Technical Innovation Specialist",
       company: "Intel Corporation",
-      description: "Led full-stack web development projects and managed system programs. Developed data-driven dashboards using Power BI, translating complex data into actionable insights.",
+      description: "Led full-stack web development projects and managed system programmes. Developed data-driven dashboards using Power BI, translating complex data into actionable insights.",
       skills: ["Web Development", "Power BI", "Data Analysis", "Hardware Integration"]
     }
   ];
@@ -349,7 +349,7 @@ export default function AboutPage() {
               },
               {
                 icon: "📊",
-                title: "Data Visualization",
+                title: "Data Visualisation",
                 description: "Create compelling dashboards and reports that turn complex data into actionable insights using Power BI and modern web technologies."
               },
               {
@@ -421,10 +421,10 @@ export default function AboutPage() {
                 benefit: "Reduce risk and ensure compliance"
               },
               {
-                icon: "💰",
+                icon: "📊",
                 title: "High Operational Costs",
                 problem: "Expensive manual processes and inefficiencies",
-                solution: "Optimize workflows and reduce operational overhead",
+                solution: "Optimise workflows and reduce operational overhead",
                 benefit: "Significant cost savings and ROI"
               }
             ].map((item, idx) => (
@@ -465,7 +465,7 @@ export default function AboutPage() {
         >
           <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-12 text-white">
             <h2 className="text-3xl font-bold mb-4">Ready to Work Together?</h2>
-            <p className="text-xl mb-8 opacity-90">Let&apos;s discuss how I can help bring your ideas to life.</p>
+            <p className="text-xl mb-8 opacity-90">Let's discuss how I can help bring your ideas to life.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link href="/#contact" className="bg-white text-indigo-600 font-bold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-shadow">

@@ -7,7 +7,7 @@ const LINKEDIN_ACCESS_TOKEN = process.env.LINKEDIN_ACCESS_TOKEN;
 const LINKEDIN_API_URL = 'https://api.linkedin.com/v2/ugcPosts';
 const POSTED_FILE = path.join(__dirname, 'postedToLinkedIn.json');
 
-// Load or initialize posted slugs
+// Load or initialise posted slugs
 let posted = [];
 if (fs.existsSync(POSTED_FILE)) {
   posted = JSON.parse(fs.readFileSync(POSTED_FILE, 'utf8'));

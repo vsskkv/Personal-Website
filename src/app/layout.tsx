@@ -4,7 +4,6 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { Analytics } from "@/components/Analytics";
-import { BinaryCursor } from "@/components/BinaryCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,8 +16,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vikram Singh Kainth",
-  description: "Made by Vikram Singh Kainth",
+  title: {
+    template: '%s | Venture Consultancy',
+    default: 'Power Platform Consultant UK | Vikram Singh Kainth | Venture Consultancy',
+  },
+  description: 'Expert Power Platform and Microsoft 365 automation consultancy for UK small businesses. Save time with Power Automate, Power Apps, and Power BI.',
+  metadataBase: new URL('https://vikramsinghkainth.com'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Power Platform Consultant UK | Venture Consultancy',
+    description: 'Specialist Microsoft 365 and Power Platform automation for UK small businesses.',
+    url: 'https://vikramsinghkainth.com/',
+    siteName: 'Venture Consultancy',
+    locale: 'en_GB',
+    type: 'website',
+  },
   icons: {
     icon: [
       { url: '/favicon.ico?v=3', sizes: 'any' },
@@ -38,7 +52,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <BinaryCursor />
         <Analytics />
         <ErrorBoundary>
           <Navigation />

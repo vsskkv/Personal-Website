@@ -9,7 +9,7 @@ A modern, responsive portfolio website showcasing expertise in Power Platform, R
 ## 🚀 Features
 
 ### **Professional Presentation**
-- **Responsive Design** - Optimized for all devices and screen sizes
+- **Responsive Design** - Optimised for all devices and screen sizes
 - **Smooth Animations** - Powered by Framer Motion for engaging interactions
 - **Typewriter Effect** - Dynamic text animations on the hero section
 - **Career Timeline** - Visual representation of professional journey
@@ -17,9 +17,9 @@ A modern, responsive portfolio website showcasing expertise in Power Platform, R
 
 ### **Power Platform Focus**
 - **Microsoft Power Platform** expertise showcase
-- **Power Apps, Power Automate, Power BI** specializations
+- **Power Apps, Power Automate, Power BI** specialisations
 - **Dataverse and SharePoint** integrations
-- **Automation solutions** and business process optimization
+- **Automation solutions** and business process optimisation
 
 ### **Modern Web Development**
 - **React & Next.js** applications
@@ -31,7 +31,7 @@ A modern, responsive portfolio website showcasing expertise in Power Platform, R
 - **Blog System** - Built-in blog with RSS feed
 - **Project Portfolio** - Detailed project descriptions and case studies
 - **Contact Form** - Functional contact form with email integration
-- **SEO Optimized** - Meta tags and structured data
+- **SEO Optimised** - Meta tags and structured data
 
 ## 🛠️ Tech Stack
 
@@ -48,7 +48,7 @@ A modern, responsive portfolio website showcasing expertise in Power Platform, R
 
 ### **Deployment**
 - **Cloudflare Pages** - Static site hosting
-- **Static Export** - Optimized for CDN delivery
+- **Static Export** - Optimised for CDN delivery
 
 ## 📁 Project Structure
 
@@ -57,44 +57,23 @@ my-portfolio/
 ├── src/
 │   ├── app/                    # Next.js App Router
 │   │   ├── about/             # About page with timeline
-│   │   ├── blog/              # Blog system
-│   │   │   ├── [slug]/        # Individual blog posts
-│   │   │   ├── data.ts        # Blog post data
-│   │   │   ├── posts/         # Blog post content
-│   │   │   └── rss/           # RSS feed
-│   │   ├── projects/          # Projects showcase
-│   │   │   ├── [slug]/        # Individual project pages
-│   │   │   └── data.ts        # Project data
-│   │   ├── api/               # API routes
-│   │   │   ├── contact/       # Contact form API
+│   │   ├── api/               # API routes (contact form)
+│   │   ├── blog/              # Blog system with MDX support
+│   │   ├── projects/          # Project showcase
+│   │   ├── venture-consultancy # Venture Consultancy section
 │   │   ├── globals.css        # Global styles
 │   │   ├── layout.tsx         # Root layout
 │   │   └── page.tsx           # Home page
-│   ├── components/            # Reusable components
-│   │   └── Typewriter.tsx    # Typewriter animation
-│   ├── lib/                   # Library files
-│   │   └── power-platform-icons.tsx  # Platform icons
-│   ├── types/                 # TypeScript definitions
-│   └── utils/                 # Utility functions
-├── public/
-│   ├── images/               # Image assets
-│   │   ├── avatar.png        # Profile image
-│   │   ├── powerapps.png     # Power Apps icon
-│   │   ├── pa.png           # Power Automate icon
-│   │   └── power-bi.png     # Power BI icon
-│   ├── favicon.ico         # Site favicon
-│   └── icons/              # Icon assets
-├── scripts/                 # Build and deployment scripts
-└── ...                      # Configuration files
+│   ├── components/            # Reusable UI components
+│   ├── lib/                   # Utility libraries and data
+│   ├── types/                 # TypeScript type definitions
+│   └── utils/                 # Helper functions
+├── public/                    # Static assets (images, icons)
+├── scripts/                   # Build and automation scripts
+└── ... config files
 ```
 
 ## 🚀 Getting Started
-
-### **Prerequisites**
-- Node.js 18+ 
-- npm or yarn
-
-### **Installation**
 
 1. **Clone the repository**
    ```bash
@@ -122,7 +101,7 @@ my-portfolio/
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
 
-## 🎨 Customization
+## 🎨 Customisation
 
 ### **Adding Blog Posts**
 1. Create a new file in `src/app/blog/posts/`
@@ -141,9 +120,9 @@ my-portfolio/
 2. Adjust project counts and categories as needed
 
 ### **Styling Changes**
-- Global styles: `src/app/globals.css`
-- Component styles: Tailwind CSS classes
-- Animations: Framer Motion configurations
+1. Global styles: `src/app/globals.css`
+2. Component styles: Tailwind CSS classes
+3. Animations: Framer Motion configurations
 
 ## 📱 Responsive Design
 
@@ -151,12 +130,12 @@ The portfolio features:
 - **Mobile-first** approach
 - **Progressive enhancement** for larger screens
 - **Touch-friendly** interactions
-- **Optimized images** and assets
+- **Optimised images** and assets
 - **Fast loading** times
 
 ## 🔧 Development
 
-### **Code Organization**
+### **Code Organisation**
 - **Components**: Reusable UI components in `src/components/`
 - **Data**: Static data and configurations in `src/lib/`
 - **Assets**: Images in `public/images/`, icons in `public/icons/`
@@ -168,9 +147,9 @@ The portfolio features:
 3. Update data files in appropriate directories
 4. Test responsiveness across devices
 
-### **Performance Optimization**
+### **Performance Optimisation**
 - Static site generation
-- Image optimization
+- Image optimisation
 - Code splitting
 - Lazy loading
 
@@ -179,39 +158,16 @@ The portfolio features:
 ### **Cloudflare Pages**
 The site is configured for deployment on Cloudflare Pages:
 - Static export with `output: 'export'`
-- Optimized build process
-- CDN delivery for fast loading
-
-### **Build Configuration**
-- `next.config.js` - Next.js configuration
-- `wrangler.toml` - Cloudflare Pages configuration
-- `package.json` - Dependencies and scripts
-
-## 📊 Performance
-
-- **Lighthouse Score**: 95+ across all metrics
-- **Core Web Vitals**: Optimized for user experience
-- **SEO**: Structured data and meta tags
-- **Accessibility**: WCAG compliant
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 📞 Contact
-
-- **Portfolio**: [vikram-portfolio.pages.dev](https://vikram-portfolio.pages.dev)
-- **Email**: vsskkv@gmail.com
-- **LinkedIn**: [Your LinkedIn Profile]
+- Optimised build process
 
 ---
 
-Built with ❤️ using Next.js, TypeScript, and Tailwind CSS
+Made with ❤️ by [Vikram Singh Kainth](https://github.com/vsskkv)
+
+### **Key Features for Venture Consultancy**
+- **Industry Pages**: Specific landing pages for Solicitors, Accountants, and Recruiters.
+- **Conversion Focused**: High-impact CTAs and "Is this for you?" filtering.
+- **Outcome Led**: Services focused on business pain relief rather than just technical features.
+- **Health Check**: A free 15-minute audit as a low-friction entry point.
+- **SEO Ready**: Semantic HTML, meta tags, and UK-based location signals.
+- **Core Web Vitals**: Optimised for user experience and search engine visibility.
