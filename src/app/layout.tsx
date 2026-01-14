@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   description: 'Expert Power Platform and Microsoft 365 automation consultancy for UK small businesses. Save time with Power Automate, Power Apps, and Power BI.',
   metadataBase: new URL('https://vikramsinghkainth.com'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://vikramsinghkainth.com/',
   },
   openGraph: {
     title: 'Power Platform Consultant UK | Venture Consultancy',
