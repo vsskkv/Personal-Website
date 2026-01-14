@@ -17,6 +17,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${industry.name} Automation Specialist | Venture Consultancy`,
     description: industry.heroText,
     keywords: [`${industry.name} automation`, `${industry.name} Microsoft 365`, `Power Platform for ${industry.name}`],
+    alternates: {
+      canonical: `https://vikramsinghkainth.com/venture-consultancy/industries/${slug}/`,
+    },
+    openGraph: {
+      title: `${industry.name} Automation Specialist | Venture Consultancy`,
+      description: industry.heroText,
+      url: `https://vikramsinghkainth.com/venture-consultancy/industries/${slug}/`,
+      type: 'website',
+    },
   };
 }
 

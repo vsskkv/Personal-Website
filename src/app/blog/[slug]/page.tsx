@@ -3,10 +3,37 @@ import { blogPosts } from "../data";
 import Link from "next/link";
 import { BinaryBackground } from '@/components/BinaryBackground';
 import { FloatingBinary } from '@/components/FloatingBinary';
+import { Metadata } from 'next';
 
 // This tells Next.js which slugs to statically generate
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = blogPosts.find((p) => p.slug === slug);
+  
+  if (!post) {
+    return {
+      title: 'Post Not Found',
+    };
+  }
+
+  return {
+    title: `${post.title} | Blog | Vikram Singh Kainth`,
+    description: post.excerpt,
+    alternates: {
+      canonical: `https://vikramsinghkainth.com/blog/${slug}/`,
+    },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `https://vikramsinghkainth.com/blog/${slug}/`,
+      type: 'article',
+      publishedTime: post.date,
+    },
+  };
 }
 
 function renderBlock(block: { type: string; text?: string; src?: string; alt?: string; level?: number; code?: string }, i: number) {

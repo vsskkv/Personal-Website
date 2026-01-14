@@ -1,24 +1,11 @@
-import { Metadata } from 'next';
-import BlogPageClient from './BlogPageClient';
+"use client";
+import Link from "next/link";
+import { blogPosts } from "./data";
+import { motion } from "framer-motion";
+import { BinaryBackground } from '@/components/BinaryBackground';
+import { FloatingBinary } from '@/components/FloatingBinary';
 
-export const metadata: Metadata = {
-  title: 'Tech Blog | Power Platform Insights & Tutorials | Vikram Singh Kainth',
-  description: 'Insights, tutorials, and stories about Power Platform, Microsoft 365 automation, and software development. Learn from real-world experiences and technical deep-dives.',
-  keywords: ['Power Platform blog', 'Microsoft 365 tutorials', 'Power Automate guides', 'tech blog UK', 'software development insights'],
-  alternates: {
-    canonical: 'https://vikramsinghkainth.com/blog/',
-  },
-  openGraph: {
-    title: 'Tech Blog | Power Platform Insights & Tutorials',
-    description: 'Insights, tutorials, and stories about Power Platform, Microsoft 365 automation, and software development.',
-    url: 'https://vikramsinghkainth.com/blog/',
-    type: 'website',
-  },
-};
-
-export default function BlogPage() {
-  return <BlogPageClient />;
-}
+export default function BlogPageClient() {
   return (
     <main className="min-h-screen w-full bg-gradient-to-r from-white to-purple-50 py-16 px-4 relative">
       <BinaryBackground intensity="low" speed="medium" />
@@ -53,4 +40,4 @@ export default function BlogPage() {
       </div>
     </main>
   );
-} 
+}

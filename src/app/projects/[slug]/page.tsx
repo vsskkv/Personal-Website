@@ -2,10 +2,36 @@ import { notFound } from "next/navigation";
 import { projects } from "../data";
 import { BinaryBackground } from '@/components/BinaryBackground';
 import { FloatingBinary } from '@/components/FloatingBinary';
+import { Metadata } from 'next';
 
 // This tells Next.js which slugs to statically generate
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
+  
+  if (!project) {
+    return {
+      title: 'Project Not Found',
+    };
+  }
+
+  return {
+    title: `${project.title} | Projects | Vikram Singh Kainth`,
+    description: project.description,
+    alternates: {
+      canonical: `https://vikramsinghkainth.com/projects/${slug}/`,
+    },
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      url: `https://vikramsinghkainth.com/projects/${slug}/`,
+      type: 'website',
+    },
+  };
 }
 
 export default async function ProjectDetail({ params }: { params: Promise<{ slug: string }> }) {

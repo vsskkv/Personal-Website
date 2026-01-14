@@ -1,24 +1,11 @@
-import { Metadata } from 'next';
-import ProjectsPageClient from './ProjectsPageClient';
+"use client";
+import Link from "next/link";
+import { projects } from "./data";
+import { motion } from "framer-motion";
+import { BinaryBackground } from '@/components/BinaryBackground';
+import { FloatingBinary } from '@/components/FloatingBinary';
 
-export const metadata: Metadata = {
-  title: 'Projects | Academic Research & Game Development | Vikram Singh Kainth',
-  description: 'A showcase of featured work across academic research and game development. Explore projects in robotics, AI, and software engineering.',
-  keywords: ['software projects', 'academic research', 'game development', 'robotics projects', 'AI research'],
-  alternates: {
-    canonical: 'https://vikramsinghkainth.com/projects/',
-  },
-  openGraph: {
-    title: 'Projects | Academic Research & Game Development',
-    description: 'A showcase of featured work across academic research and game development.',
-    url: 'https://vikramsinghkainth.com/projects/',
-    type: 'website',
-  },
-};
-
-export default function ProjectsPage() {
-  return <ProjectsPageClient />;
-}
+export default function ProjectsPageClient() {
   return (
     <main className="min-h-screen w-full bg-gradient-to-r from-indigo-50 to-purple-50 py-16 px-4 relative">
       <BinaryBackground intensity="low" speed="medium" />
@@ -63,4 +50,4 @@ export default function ProjectsPage() {
       </div>
     </main>
   );
-} 
+}
